@@ -86,12 +86,12 @@ public class TrashBallControler : MonoBehaviour
         //}
 
 
-        if (Input.GetKeyDown(KeyCode.M))
-        {
+        //if (Input.GetKeyDown(KeyCode.M))
+        //{
 
-            SceneManager.LoadScene("TrashBasketBall");
+        //    SceneManager.LoadScene("TrashBasketBall");
 
-        }
+        //}
 
 
     }
