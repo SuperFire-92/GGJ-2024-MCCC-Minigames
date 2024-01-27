@@ -9,6 +9,16 @@ TagManager:
   - alien
   - SlingshotBase
   - Enemy
+  - cannonball
+  - Wall
+  - Endpoint
+  - Death
+  - OB
+  - qkey
+  - qkeymain
+  - wkey
+  - wkeymain
+  - keymain
   layers:
   - Default
   - TransparentFX

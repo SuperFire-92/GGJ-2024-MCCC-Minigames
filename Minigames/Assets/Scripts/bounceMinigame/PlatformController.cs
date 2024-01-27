@@ -6,6 +6,7 @@ public class PlatformController : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float speed;
+    private float input;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -14,11 +15,15 @@ public class PlatformController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
+        if(Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1)
+        {
+            Move();
+        }
     }
     void Move()
     {
-
+        input = Input.GetAxisRaw("Horizontal");
+        rb.velocity = new Vector2(speed * input, rb.velocity.y);
     }
     
 }

@@ -41,4 +41,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/KillAliens.unity
     guid: 9edaff0e9521c814d90a3064c9d38f9f
+  - enabled: 1
+    path: Assets/Scenes/arrowmatch.unity
+    guid: cbaca07da169d634e9e5b80080782df8
+  - enabled: 1
+    path: Assets/Scenes/BounceMinigame.unity
+    guid: 0f2a90bb06f87634faa24a504e41dc4f
   m_configObjects: {}

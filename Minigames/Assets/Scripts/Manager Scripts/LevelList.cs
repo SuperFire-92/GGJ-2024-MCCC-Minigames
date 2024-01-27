@@ -17,7 +17,11 @@ public static class LevelList
         {"level6", "KillAliens" },
         {"level7", "FlashlightGame" },
         {"level8", "AvoidFallingObjects" },
-        {"level9", "KTB" }
+        {"level9", "KTB" },
+        {"Level10", "BounceMinigame" },
+        {"Level11", "arrowmatch" }
+
+
     };
 
     public const string theGame = "TheGame";
