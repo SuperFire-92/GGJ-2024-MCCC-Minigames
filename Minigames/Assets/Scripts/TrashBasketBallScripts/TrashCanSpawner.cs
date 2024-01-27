@@ -13,7 +13,7 @@ public class TrashCanSpawner : MonoBehaviour
     void Start()
     {
        
-       GameObject createdTrashCan = Instantiate(trashCan);
+       createdTrashCan = Instantiate(trashCan);
        createdTrashCan.transform.position = spawnLocations[Random.Range(0, 6)].transform.position;
     }
 
