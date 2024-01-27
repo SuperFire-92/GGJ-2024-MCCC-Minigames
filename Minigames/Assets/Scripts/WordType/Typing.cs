@@ -183,5 +183,15 @@ public class Typing : MonoBehaviour
         words.Add("youg");
         words.Add("partner");
         words.Add("debut");
+        words.Add("minecraft");
+        words.Add("creeper");
+        words.Add("zombie");
+        words.Add("steve");
+        words.Add("enderman");
+        words.Add("mother");
+        words.Add("minecraft");
+        words.Add("minecraft");
+        words.Add("minecraft");
+        words.Add("minecraft");
     }
 }

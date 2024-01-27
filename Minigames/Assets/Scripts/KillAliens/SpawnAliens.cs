@@ -27,10 +27,10 @@ public class SpawnAliens : MonoBehaviour
         //This is kind of all over the place but whatever, it is what it is. I tried cleaning it up and it broke
         for (int i = 0; i < numOfAliensToSpawn; i++)
         {
-            int randomIndex = Random.Range(0, spawnLocations.Count - 1);
+            int randomIndex = Random.Range(0, spawnLocations.Count);
             while(!goodIndex(randomIndex))
             {
-                randomIndex = Random.Range(0, spawnLocations.Count - 1);
+                randomIndex = Random.Range(0, spawnLocations.Count);
             }
             spawnedIndexes.Add(randomIndex);
             Instantiate(alienToSpawn);
