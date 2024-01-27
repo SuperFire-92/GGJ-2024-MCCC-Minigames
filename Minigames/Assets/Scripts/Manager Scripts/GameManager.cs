@@ -31,6 +31,9 @@ public static class GameManager
         return score;
     }
 
+    //TO BE USED TO END ANY MINIGAME
+    //Tell it false if the player lost (mainly done when the timer runs out)
+    //Tell it true to say the player won the minigame, and to lead back to the game scene
     public static void endMiniGame(bool win)
     {
         if (win)
