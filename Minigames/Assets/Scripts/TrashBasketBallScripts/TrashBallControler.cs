@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class TrashBallControler : MonoBehaviour
 {
     private Rigidbody2D trashBallRigidbody2D;
+    private float inputHorizontal;
+    private float inputVertical;
     public Vector3 aimVector;
     bool farShot;
     bool canShoot;
@@ -48,7 +50,10 @@ public class TrashBallControler : MonoBehaviour
     private void aimTrashBall()
     {
 
-        if (Input.GetKey(KeyCode.LeftArrow)) 
+        inputHorizontal = Input.GetAxisRaw("Horizontal");
+        inputVertical = Input.GetAxisRaw("Vertical");
+
+        if (inputHorizontal < 0) 
         {
             if (aimVector.x > -16)
             {
@@ -57,7 +62,7 @@ public class TrashBallControler : MonoBehaviour
             
 
         }
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (inputHorizontal > 0)
         {
             if (aimVector.x < 16)
             {
@@ -66,13 +71,13 @@ public class TrashBallControler : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (inputVertical < 0)
         {
             aimVector.y = 9;
             farShot = false;
             //Debug.Log("aim row = " + aimVector.y);
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (inputVertical > 0)
         {
             aimVector.y = 12;
             farShot = true;
