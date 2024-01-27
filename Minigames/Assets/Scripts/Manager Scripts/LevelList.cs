@@ -11,7 +11,8 @@ public static class LevelList
     {
         {"level1", "WheresWaldo"},
         {"level2", "AvoidFallingObjects"},
-        {"level3", "KTB"}
+        {"level3", "KTB"},
+        {"Level4", "BowMinigame" }
     };
 
     public const string theGame = "TheGame";
