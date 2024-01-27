@@ -13,7 +13,9 @@ public static class LevelList
         {"level2", "wiibalanceboard" },
         {"level3", "BowMinigame" },
         {"level4", "TrashBasketBall" },
-        {"level5", "KillAliens" }
+        {"level5", "WizardFireball" },
+        {"level6", "KillAliens" },
+        {"level7", "FlashlightGame" }
     };
 
     public const string theGame = "TheGame";

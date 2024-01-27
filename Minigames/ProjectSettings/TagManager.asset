@@ -8,7 +8,6 @@ TagManager:
   - FallingObject
   - alien
   - SlingshotBase
-  - cannonball
   - Enemy
   layers:
   - Default

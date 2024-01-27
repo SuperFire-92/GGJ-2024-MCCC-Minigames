@@ -77,7 +77,7 @@ public class HandMovement : MonoBehaviour
         }
 
         //If left mouse button is clicked
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (canFire)
             {
