@@ -21,4 +21,5 @@ public class Timer : MonoBehaviour
             GameManager.endMiniGame(!timerKill);
         }
     }
+
 }

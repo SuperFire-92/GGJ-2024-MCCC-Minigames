@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WordType.unity
     guid: 4c48b7a35ee315c4cb36c6646d1e38c9
+  - enabled: 1
+    path: Assets/Scenes/TurtleRacer.unity
+    guid: 0b8fa3652649d8b40bbfea91607c95f8
   m_configObjects: {}
