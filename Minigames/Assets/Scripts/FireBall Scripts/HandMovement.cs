@@ -76,7 +76,7 @@ public class HandMovement : MonoBehaviour
             shotCooldown -= Time.deltaTime;
         }
 
-        //If left mouse button is clicked
+        //If space is clicked
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (canFire)
