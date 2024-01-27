@@ -21,8 +21,7 @@ public class AFOCollision : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("FallingObject"))
         {
-            // Temp: load main menu - minigame failed
-            SceneManager.LoadScene("MainMenu");
+            GameManager.endMiniGame(false);
         }
     }
 }
