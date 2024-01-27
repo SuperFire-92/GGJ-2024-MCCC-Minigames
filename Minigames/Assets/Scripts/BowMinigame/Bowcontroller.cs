@@ -45,7 +45,7 @@ public class Bowcontroller : MonoBehaviour
         {
             goingup = false;
             speed = speed + (float).1;
-            Debug.Log("Switch down");
+            //Debug.Log("Switch down");
         }
 
     }
@@ -60,7 +60,7 @@ public class Bowcontroller : MonoBehaviour
         {
             goingup = true;
             speed = speed + (float).1;
-            Debug.Log("Switch up");
+            //Debug.Log("Switch up");
         }
     }
 
