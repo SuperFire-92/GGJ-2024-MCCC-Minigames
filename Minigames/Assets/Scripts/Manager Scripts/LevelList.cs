@@ -14,7 +14,8 @@ public static class LevelList
         {"level3", "BowMinigame" },
         {"level4", "TrashBasketBall" },
         {"level5", "WizardFireball" },
-        {"level6", "KillAliens" }
+        {"level6", "KillAliens" },
+        {"level7", "FlashlightGame" }
     };
 
     public const string theGame = "TheGame";
