@@ -25,6 +25,10 @@ public class Bowcontroller : MonoBehaviour
 
         Moveup();
         MoveDown();
+        if(speed > 25)
+        {
+            speed = 25;
+        }
         if (hasfire == false)
         {
             shoot();
@@ -40,6 +44,7 @@ public class Bowcontroller : MonoBehaviour
         if (transform.position.y >= startpos + 4)
         {
             goingup = false;
+            speed = speed + (float).1;
             Debug.Log("Switch down");
         }
 
@@ -54,6 +59,7 @@ public class Bowcontroller : MonoBehaviour
         if (transform.position.y <= startpos - 4)
         {
             goingup = true;
+            speed = speed + (float).1;
             Debug.Log("Switch up");
         }
     }

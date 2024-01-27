@@ -35,5 +35,10 @@ public class Arrowcontroller : MonoBehaviour
             Destroy(this.gameObject);
             GameManager.endMiniGame(true);
         }
+        if(collision.gameObject.CompareTag("Wall"))
+        {
+            Destroy(this.gameObject);
+            GameManager.endMiniGame(false);
+        }
     }
 }
