@@ -7,11 +7,15 @@ public class surferMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float speed;
+    public GameObject thingIWantToMake;
 
     // Start is called before the first frame update
     void Start()
     {
+        GameObject test;
         rb = GetComponent<Rigidbody2D>();
+        test = Instantiate(thingIWantToMake);
+        Debug.Log(test.transform.position.x);
     }
 
     // Update is called once per frame
@@ -37,4 +41,7 @@ public class surferMovement : MonoBehaviour
             GameManager.endMiniGame(false);
         }
     }
+
+    //Random.Range()
+    //Instantiate()
 }
