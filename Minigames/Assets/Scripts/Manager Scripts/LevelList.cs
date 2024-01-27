@@ -10,10 +10,8 @@ public static class LevelList
     private static Dictionary<string, string> dictionary = new Dictionary<string, string>()
     {
         {"level1", "WheresWaldo"},
-        {"level2", "AvoidFallingObjects"},
-        {"level3", "KTB"},
-        {"level4", "wiibalanceboard" },
-        {"level5", "BowMinigame" }
+        {"level2", "wiibalanceboard" },
+        {"level3", "BowMinigame" }
     };
 
     public const string theGame = "TheGame";

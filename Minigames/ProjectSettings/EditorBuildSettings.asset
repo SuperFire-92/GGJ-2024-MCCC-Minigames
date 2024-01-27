@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AvoidFallingObjects.unity
     guid: 895d4b87ce36e164dbfb396df25e798d
+  - enabled: 1
+    path: Assets/Scenes/KTB.unity
+    guid: b2e223fd52e1fce449381f4f02364373
+  - enabled: 1
+    path: Assets/Scenes/TheGame.unity
+    guid: dfc267c6e8a433a409834d84e3fe468d
+  - enabled: 1
+    path: Assets/Scenes/WheresWaldo.unity
+    guid: b7bace0f4d4caf44bb85c4172495394a
   m_configObjects: {}

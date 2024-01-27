@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
+    [Header("Info")]
     [SerializeField] float timerLength;
+    [SerializeField] bool timerKill;
 
     private void Start()
     {
@@ -16,7 +18,7 @@ public class Timer : MonoBehaviour
         timerLength -= Time.deltaTime;
         if (timerLength <= 0) 
         {
-            GameManager.endMiniGame(false);
+            GameManager.endMiniGame(!timerKill);
         }
     }
 }

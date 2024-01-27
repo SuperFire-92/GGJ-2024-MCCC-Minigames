@@ -47,7 +47,7 @@ public class Movement : MonoBehaviour
         if (collision.gameObject.tag == "Death")
         {
             //Die
-            Debug.Log("you dead");
+            GameManager.endMiniGame(false);
         }
     }
 
