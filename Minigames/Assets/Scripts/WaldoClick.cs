@@ -20,7 +20,7 @@ public class WaldoClick : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0) && canClick)
         {
-            Debug.Log("CLICKED WALDO");
+            GameManager.endMiniGame(true);
             //NEXT LEVEL or something idk
         }
     }

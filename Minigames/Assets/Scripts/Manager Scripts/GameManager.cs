@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public static class GameManager
 {
     private static int score;
-    private static float speed;
+    private static float speed = 1;
     private static int lives;
     private static int speedIncrease = 5;
 
@@ -14,15 +14,15 @@ public static class GameManager
     {
         score = 0;
         lives = 3;
-        speed = 6;
+        speed = 1;
     }
 
     public static void addScore(int value)
     {
         score += value;
-        if (score % speedIncrease == 0 && speed > 3)
+        if (score % speedIncrease == 0 && speed > 0.7)
         {
-            speed--;
+            speed -= 0.1f;
         }
     }
     
@@ -43,5 +43,10 @@ public static class GameManager
             lives--;
             SceneManager.LoadScene(LevelList.theGame);
         }
+    }
+
+    public static float getSpeed()
+    {
+        return speed;
     }
 }

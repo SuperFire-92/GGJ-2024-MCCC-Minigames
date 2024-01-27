@@ -23,7 +23,7 @@ public class MiniGameBouncer : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            Debug.Log(LevelList.getRandomLevel());
+            SceneManager.LoadScene(LevelList.getRandomLevel());
         }
     }
 }
