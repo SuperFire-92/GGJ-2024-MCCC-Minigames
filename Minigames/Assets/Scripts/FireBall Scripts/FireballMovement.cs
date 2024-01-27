@@ -34,8 +34,9 @@ public class FireballMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<Goblin>().destroyEnemy();
             gm.subtractGoblinNum();
+            Debug.Log("Subtracting goblin");
+            collision.gameObject.GetComponent<Goblin>().destroyEnemy();
             destroyProjectile();
         }
     }

@@ -99,7 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85024a186dbdb69499a23fd8b2330a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameManager: {fileID: 0}
+  rotateSpeed: 100
+  angle: 45
 --- !u!61 &5378346602370695857
 BoxCollider2D:
   m_ObjectHideFlags: 0
