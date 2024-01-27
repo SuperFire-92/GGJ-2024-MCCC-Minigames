@@ -16,7 +16,8 @@ public static class LevelList
         {"level5", "WizardFireball" },
         {"level6", "KillAliens" },
         {"level7", "FlashlightGame" },
-        {"level8", "AvoidFallingObjects" }
+        {"level8", "AvoidFallingObjects" },
+        {"level9", "KTB" }
     };
 
     public const string theGame = "TheGame";

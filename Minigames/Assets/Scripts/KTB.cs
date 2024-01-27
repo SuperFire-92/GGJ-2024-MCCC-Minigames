@@ -9,6 +9,12 @@ public class KTB : MonoBehaviour
     [SerializeField] private GameObject keyboard_e;
     [SerializeField] private GameObject keyboard_c;
     [SerializeField] private TMP_Text powerTMP;
+    [SerializeField] private GameObject instructionstxt;
+    [SerializeField] private GameObject foot;
+    [SerializeField] private GameObject ball;
+    [SerializeField] private GameObject goal;
+    [SerializeField] private Animator anim;
+    [SerializeField] private GameObject ballgoalthing;
     private bool ekeyActive;
     private bool cKeyActive;
 
@@ -64,6 +70,34 @@ public class KTB : MonoBehaviour
             powerTMP.SetText("POWER: " + power);
         }
         successfulKeyPress = false;
+        instructionstxt.SetActive(false);
+        ballgoalthing.SetActive(true);
+        yield return new WaitForSeconds(1F);
+
+        bool didPlayerWin;
+        if(power <= 0)
+        {
+            anim.SetTrigger("KickFail");
+            didPlayerWin = false;
+        }
+        else if(power >= 6)
+        {
+            anim.SetTrigger("KickSuperSuccess");
+            didPlayerWin = true;
+        }
+        else if(power >= 3)
+        {
+            anim.SetTrigger("KickSuccess");
+            didPlayerWin = true;
+        }
+        else
+        {
+            didPlayerWin = false;
+        }
+
+        yield return new WaitForSeconds(1F);
+        GameManager.endMiniGame(didPlayerWin);
+
         yield return 0;
     }
 }
