@@ -6,6 +6,7 @@ TagManager:
   tags:
   - waldo
   - FallingObject
+  - alien
   layers:
   - Default
   - TransparentFX
