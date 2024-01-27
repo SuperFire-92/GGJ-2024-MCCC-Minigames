@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
+    //[SerializeField] AudioSource gameStartNoise;
+    private AudioSource gameStartNoise;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameStartNoise = GetComponent<AudioSource>();
     }
     public void quitGame()
     {
@@ -17,6 +20,7 @@ public class MainMenuScript : MonoBehaviour
 
     public void startGame()
     {
+        gameStartNoise.Play();
         SceneManager.LoadScene("TheGame");
     }
 }

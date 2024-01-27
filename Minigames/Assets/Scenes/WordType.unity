@@ -403,7 +403,7 @@ MonoBehaviour:
   wordText: {fileID: 2067865775}
   mistakesText: {fileID: 1905076555}
   numOfWordsToType: 4
-  mistakesAllowed: 3
+  mistakesAllowed: 5
 --- !u!1001 &1050603049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -418,7 +418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6131575968052043683, guid: 89c72e3820150f44b8b5f1d9b77cdc91, type: 3}
       propertyPath: timerLength
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7763020383129534999, guid: 89c72e3820150f44b8b5f1d9b77cdc91, type: 3}
       propertyPath: m_Name

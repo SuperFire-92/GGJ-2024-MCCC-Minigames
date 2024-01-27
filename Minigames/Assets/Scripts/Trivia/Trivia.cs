@@ -20,6 +20,9 @@ public class Trivia : MonoBehaviour
     private string D;
     private string correctAnswer;
 
+    [SerializeField] AudioSource correctNoise;
+    [SerializeField] AudioSource wrongNoise;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -96,6 +99,7 @@ public class Trivia : MonoBehaviour
     {
         //WIN CONDITION
         Debug.Log("WIN");
+        correctNoise.Play();
         GameManager.endMiniGame(true);
     }
 
@@ -103,6 +107,7 @@ public class Trivia : MonoBehaviour
     {
         //LOSE CONDITION
         Debug.Log("LOSE");
+        wrongNoise.Play();
         GameManager.endMiniGame(false);
     }
 
@@ -113,7 +118,7 @@ public class Trivia : MonoBehaviour
         list.Add(new PromptAndAnswer("What does 'supercalifragilisticexpialidocious' mean?", "Wonderful", "Super", "Bad", "It isn't a word", "A"));
         list.Add(new PromptAndAnswer("What animal did Australian soldiers fight in 1932?", "Cats", "Chickens", "Emus", "Your Mother", "C"));
         list.Add(new PromptAndAnswer("Why did the chicken cross the road?", "To get to the idiot's house", "To get to the other side", "It didn't", "All of the above", "D"));
-        list.Add(new PromptAndAnswer("Why is it called a vaccuum?", "It is shaped like a V", "It isn't", "I don't know", "It sucks", "D"));
+        list.Add(new PromptAndAnswer("Why is it called a vacuum?", "It is shaped like a V", "It isn't", "I don't know", "It sucks", "D"));
         list.Add(new PromptAndAnswer("How long did the 100 years war last?", "100 years", "116 years", "90 years", "1 day", "B"));
         list.Add(new PromptAndAnswer("What do you call a fish with no eyes?", "Fsh", "A fish", "Fishstick", "None of the above", "A"));
         list.Add(new PromptAndAnswer("What is this game based off of?", "It's a totally original idea", "WarioWare", "Minecraft", "Fortnite", "B"));

@@ -9,7 +9,7 @@ public class TurtleRacerHareMovement : MonoBehaviour
     void Start()
     {
         hareRigidbody2D = GetComponent<Rigidbody2D>();
-        hareRigidbody2D.velocity = new Vector3(4f, 0, 0);
+        hareRigidbody2D.velocity = new Vector3(5f, 0, 0);
     }
 
 
