@@ -9,11 +9,9 @@ public static class LevelList
     //keep a naming system without having to go and rename every scene.
     private static Dictionary<string, string> dictionary = new Dictionary<string, string>()
     {
-        {"level1", "bacon"},
-        {"level2", "cranberry"},
-        {"level3", "gocus-pocus"},
-        {"level4", "jjjjjjjjjjj"},
-        {"level5", "fasdfare"}
+        {"level1", "WheresWaldo"},
+        {"level2", "AvoidFallingObjects"},
+        {"level3", "KTB"}
     };
 
     public const string theGame = "TheGame";
