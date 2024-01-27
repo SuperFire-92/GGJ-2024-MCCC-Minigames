@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4c80ffe019b14e0439bee073f370497e
+guid: a1a222ae3678c54449d2fc29f20ba6c7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -46,8 +46,8 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 3
-  spritePivot: {x: 1, y: 1}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -110,43 +110,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: circl_0
+      name: circl2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 85
-        height: 402
+        width: 177
+        height: 632
       alignment: 9
-      pivot: {x: 3.9578447, y: 1.0006303}
+      pivot: {x: 4.120133, y: 0.98082113}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2712da35777d7649829d279d126cb57
-      internalID: -1906556783
+      spriteID: 6ff6685a1cbec3d4790b5b72a83b1b5a
+      internalID: -1775818018
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: circl_1
+      name: circl2_1
       rect:
         serializedVersion: 2
-        x: 85
+        x: 178
         y: 0
-        width: 253
-        height: 402
-      alignment: 3
-      pivot: {x: 1, y: 1}
+        width: 551
+        height: 632
+      alignment: 9
+      pivot: {x: 0.99986553, y: 0.98622364}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a90933596d6daaa40a9ea318c76ba330
-      internalID: 2050348792
+      spriteID: 3e8e8b6e2d2400d459812de075acde25
+      internalID: -1571448413
       vertices: []
       indices: 
       edges: []
@@ -155,15 +155,15 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      circl_0: -1906556783
-      circl_1: 2050348792
+      circl2_0: -1775818018
+      circl2_1: -1571448413
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
