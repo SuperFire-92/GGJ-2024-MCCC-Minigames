@@ -32,11 +32,12 @@ public class DoubleHandMovement : MonoBehaviour
 
     private void coverNose()
     {
-        while(transform.position.y < endPosY) 
+        while(transform.position.y <= endPosY) 
         {
             transform.Translate(Vector2.up * movementSpeed * Time.deltaTime);
-            noseCovered=true;
+
         }
+        noseCovered = true;
     }
 
     public bool getNoseCovered()

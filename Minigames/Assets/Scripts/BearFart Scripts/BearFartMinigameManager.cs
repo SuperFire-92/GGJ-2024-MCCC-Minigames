@@ -7,13 +7,12 @@ public class BearFartMinigameManager : MonoBehaviour
     public GameObject fart;
     public Transform asshole;
 
-    public GameObject hands;
     public DoubleHandMovement dhm;
 
     public float bearFartTimer=5;
     private float bearFartSpeed;
 
-    private bool farted;
+    static private bool farted=false;
 
 
 
@@ -22,7 +21,7 @@ public class BearFartMinigameManager : MonoBehaviour
     {
         bearFartTimer=5;
         farted = false;
-        
+
 
         setBearFartSpeed();
     }
@@ -35,6 +34,7 @@ public class BearFartMinigameManager : MonoBehaviour
         {
             bearFart();
         }
+        checkGameWin();
     }
 
     private void setBearFartSpeed()
@@ -46,11 +46,19 @@ public class BearFartMinigameManager : MonoBehaviour
     private void bearFart()
     {
         Instantiate(fart, asshole.position, transform.rotation);
-        farted.Equals(false);
+        farted=true;
     }
 
     private void checkGameWin()
     {
-        
+        Debug.Log(dhm.getNoseCovered());
+        if (farted.Equals(true) && bearFartSpeed > -0.5 && dhm.getNoseCovered().Equals(true))
+        {
+            GameManager.endMiniGame(true);
+        }
+        else if(farted.Equals(true) && bearFartSpeed<-0.5)
+        {
+            GameManager.endMiniGame(false);
+        }
     }
 }
