@@ -202,6 +202,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerLength: 0
   timerKill: 0
+  ignoreMultiplier: 0
+  waitToStart: 0
   timeDisplay: {fileID: 4408422084939970708}
 --- !u!1 &8263224139536176470
 GameObject:
@@ -238,7 +240,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 259.1377, y: 141.9921}
+  m_SizeDelta: {x: 370.8424, y: 141.9921}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &8680474538621129191
 CanvasRenderer:
@@ -268,7 +270,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: TIME
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 14333d4c6da5d5d459c76e0d8e26dd05, type: 2}
   m_sharedMaterial: {fileID: 1066768601598383026, guid: 14333d4c6da5d5d459c76e0d8e26dd05, type: 2}

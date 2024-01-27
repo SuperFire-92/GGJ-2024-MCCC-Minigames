@@ -40,7 +40,15 @@ public class Timer : MonoBehaviour
             }
             else
             {
-                timeDisplay.text = Mathf.FloorToInt(timerLength).ToString();
+                if (Mathf.FloorToInt(timerLength).ToString() == "-1")
+                {
+                    timeDisplay.text = "0";
+                }
+                else
+                {
+                    timeDisplay.text = Mathf.FloorToInt(timerLength).ToString();
+                }
+                
             }
         
             if (timerLength <= 0) 
