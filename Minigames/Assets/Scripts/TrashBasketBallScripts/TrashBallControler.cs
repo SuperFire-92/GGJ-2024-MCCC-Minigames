@@ -10,7 +10,7 @@ public class TrashBallControler : MonoBehaviour
     private float inputHorizontal;
     private float inputVertical;
     public Vector3 aimVector;
-    bool farShot;
+    //bool farShot;
     bool canShoot;
 
     // Start is called before the first frame update
@@ -18,7 +18,7 @@ public class TrashBallControler : MonoBehaviour
     {
         trashBallRigidbody2D = GetComponent<Rigidbody2D>();
         aimVector = new Vector3 (0, 12, 0);
-        farShot = true;
+        //farShot = true;
         canShoot = true;
     }
 
@@ -55,7 +55,7 @@ public class TrashBallControler : MonoBehaviour
 
         if (inputHorizontal < 0) 
         {
-            if (aimVector.x > -16)
+            if (aimVector.x > -18)
             {
                 aimVector.x -= 0.02f;
             }
@@ -64,25 +64,26 @@ public class TrashBallControler : MonoBehaviour
         }
         if (inputHorizontal > 0)
         {
-            if (aimVector.x < 16)
+            if (aimVector.x < 18)
             {
                 aimVector.x += 0.02f;
             }
 
         }
 
-        if (inputVertical < 0)
-        {
-            aimVector.y = 9;
-            farShot = false;
-            //Debug.Log("aim row = " + aimVector.y);
-        }
-        if (inputVertical > 0)
-        {
-            aimVector.y = 12;
-            farShot = true;
-            //Debug.Log("aim row = " + aimVector.y);
-        }
+        //  remove farshot/lowshot
+        //if (inputVertical < 0)
+        //{
+        //    aimVector.y = 9;
+        //    farShot = false;
+        //    //Debug.Log("aim row = " + aimVector.y);
+        //}
+        //if (inputVertical > 0)
+        //{
+        //    aimVector.y = 12;
+        //    farShot = true;
+        //    //Debug.Log("aim row = " + aimVector.y);
+        //}
 
 
         if (Input.GetKeyDown(KeyCode.M))
@@ -102,10 +103,15 @@ public class TrashBallControler : MonoBehaviour
 
     }
 
-    public bool getFarShot()
+    public bool getCanShoot()
     {
-        return farShot;
+        return canShoot;
     }
+
+    //public bool getFarShot()
+    //{
+    //    return farShot;
+    //}
 
 
     private void OnTriggerEnter2D(Collider2D collision)
