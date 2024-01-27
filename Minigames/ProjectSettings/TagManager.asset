@@ -6,6 +6,7 @@ TagManager:
   tags:
   - waldo
   - FallingObject
+  - Endpoint
   layers:
   - Default
   - TransparentFX

@@ -13,7 +13,8 @@ public static class LevelList
         {"level2", "cranberry"},
         {"level3", "gocus-pocus"},
         {"level4", "jjjjjjjjjjj"},
-        {"level5", "fasdfare"}
+        {"level5", "fasdfare"},
+        {"Level6",  "BowMinigame"}
     };
 
     public const string theGame = "TheGame";
