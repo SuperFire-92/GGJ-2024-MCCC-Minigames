@@ -5,11 +5,15 @@ using UnityEngine;
 public class BearFartMinigameManager : MonoBehaviour
 {
     public GameObject fart;
-    public GameObject spawnLocation;
+    public Transform asshole;
+
+    public GameObject hands;
+    public DoubleHandMovement dhm;
 
     public float bearFartTimer=5;
     private float bearFartSpeed;
 
+    private bool farted;
 
 
 
@@ -17,27 +21,36 @@ public class BearFartMinigameManager : MonoBehaviour
     void Start()
     {
         bearFartTimer=5;
+        farted = false;
+        
+
         setBearFartSpeed();
     }
 
     // Update is called once per frame
     void Update()
     {
-        bearFartTimer-=Time.deltaTime;
-
+        bearFartSpeed-=Time.deltaTime;
+        if (bearFartSpeed < 0 && farted.Equals(false))
+        {
+            bearFart();
+        }
     }
 
     private void setBearFartSpeed()
     {
-        bearFartSpeed=Random.Range(1F, bearFartTimer);
+        bearFartSpeed=Random.Range(1F, bearFartTimer-1);
         Debug.Log(bearFartSpeed);
     }
 
     private void bearFart()
     {
-        if(bearFartSpeed>=0)
-        {
-            fart.SetActive(true);
-        }
+        Instantiate(fart, asshole.position, transform.rotation);
+        farted.Equals(false);
+    }
+
+    private void checkGameWin()
+    {
+        
     }
 }
