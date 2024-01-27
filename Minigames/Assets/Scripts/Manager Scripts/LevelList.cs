@@ -18,10 +18,11 @@ public static class LevelList
         {"level7", "FlashlightGame" },
         {"level8", "AvoidFallingObjects" },
         {"level9", "KTB" },
-        {"Level10", "BounceMinigame" },
-        {"Level11", "arrowmatch" },
-        {"Level12", "WordType" },
-        {"Level13", "TurtleRacer" }
+        {"level10", "BounceMinigame" },
+        {"level11", "arrowmatch" },
+        {"level12", "WordType" },
+        {"level13", "TurtleRacer" },
+        {"level14", "GiveASmooch" }
 
     };
 
