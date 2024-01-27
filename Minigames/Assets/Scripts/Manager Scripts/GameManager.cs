@@ -9,6 +9,8 @@ public static class GameManager
     private static float speed = 1;
     private static int lives;
     private static int speedIncrease = 5;
+    //0 - Still playing, 1 - Win, 2 - Loss
+    public static int gameStatus = 0;
 
     public static void resetGame()
     {
@@ -36,16 +38,21 @@ public static class GameManager
     //Tell it true to say the player won the minigame, and to lead back to the game scene
     public static void endMiniGame(bool win)
     {
-        if (win)
+        if (win && gameStatus == 0)
         {
             score++;
-            SceneManager.LoadScene(LevelList.theGame);
+            gameStatus = 1;
         }
-        else
+        else if (gameStatus == 0)
         {
             lives--;
-            SceneManager.LoadScene(LevelList.theGame);
+            gameStatus = 2;
         }
+    }
+
+    public static void returnToMainGame()
+    {
+        SceneManager.LoadScene(LevelList.theGame);
     }
 
     public static float getSpeed()
