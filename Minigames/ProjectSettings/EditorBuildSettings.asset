@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WheresWaldo.unity
     guid: b7bace0f4d4caf44bb85c4172495394a
+  - enabled: 1
+    path: Assets/Scenes/BowMinigame.unity
+    guid: 7fea2b6da3afa3b4cbbafbbed659024c
+  - enabled: 1
+    path: Assets/Scenes/wiibalanceboard.unity
+    guid: 632d030e591bcc54f9ab69c97d6d6c7f
   m_configObjects: {}
