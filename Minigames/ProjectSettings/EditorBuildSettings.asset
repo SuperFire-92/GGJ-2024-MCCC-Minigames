@@ -53,4 +53,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TurtleRacer.unity
     guid: 0b8fa3652649d8b40bbfea91607c95f8
+  - enabled: 1
+    path: Assets/Scenes/Trivia.unity
+    guid: 7e82f987c220a4a49a15ff1cc09b3154
   m_configObjects: {}

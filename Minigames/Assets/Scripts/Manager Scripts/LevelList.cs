@@ -21,7 +21,8 @@ public static class LevelList
         {"Level10", "BounceMinigame" },
         {"Level11", "arrowmatch" },
         {"Level12", "WordType" },
-        {"Level13", "TurtleRacer" }
+        {"Level13", "TurtleRacer" },
+        {"Level14", "Trivia" }
 
     };
 
