@@ -19,8 +19,8 @@ public static class LevelList
         {"level8", "AvoidFallingObjects" },
         {"level9", "KTB" },
         {"Level10", "BounceMinigame" },
-        {"Level11", "arrowmatch" }
-
+        {"Level11", "arrowmatch" },
+        {"Level12", "WordType" }
 
     };
 
