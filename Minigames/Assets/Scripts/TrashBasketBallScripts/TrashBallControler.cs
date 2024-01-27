@@ -117,7 +117,9 @@ public class TrashBallControler : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y + 0.4f, transform.position.z);
             trashBallRigidbody2D.gravityScale = 0f;
 
-            Debug.Log("Yay you did it!!!");
+            GameManager.endMiniGame(true);
+
+            //Debug.Log("Yay you did it!!!");
         }
         
     }

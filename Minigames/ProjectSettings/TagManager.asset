@@ -6,7 +6,9 @@ TagManager:
   tags:
   - waldo
   - FallingObject
+  - alien
   - SlingshotBase
+  - Enemy
   layers:
   - Default
   - TransparentFX

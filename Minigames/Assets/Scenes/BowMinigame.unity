@@ -533,6 +533,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6131575968052043683, guid: 89c72e3820150f44b8b5f1d9b77cdc91, type: 3}
+      propertyPath: timerKill
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131575968052043683, guid: 89c72e3820150f44b8b5f1d9b77cdc91, type: 3}
       propertyPath: timerLength
       value: 10
       objectReference: {fileID: 0}

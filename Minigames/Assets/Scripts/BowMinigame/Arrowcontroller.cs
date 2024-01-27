@@ -10,6 +10,7 @@ public class Arrowcontroller : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
@@ -21,6 +22,7 @@ public class Arrowcontroller : MonoBehaviour
     {
         rb.velocity = new Vector2(speed * (float)1.5, rb.velocity.y);
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Endpoint"))
