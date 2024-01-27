@@ -22,12 +22,12 @@ public static class LevelList
         {"Level11", "arrowmatch" },
         {"Level12", "WordType" },
         {"Level13", "TurtleRacer" },
-        {"Level15", "Trivia" }
         {"level10", "BounceMinigame" },
         {"level11", "arrowmatch" },
         {"level12", "WordType" },
         {"level13", "TurtleRacer" },
-        {"level14", "GiveASmooch" }
+        {"level14", "GiveASmooch" },
+        {"Level15", "Trivia" }
 
     };
 
