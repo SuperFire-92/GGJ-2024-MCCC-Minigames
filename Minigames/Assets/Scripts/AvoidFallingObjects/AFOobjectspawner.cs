@@ -21,7 +21,7 @@ public class AFOobjectspawner : MonoBehaviour
     {
         Debug.Log("Waiting 3 Seconds");
         yield return new WaitForSeconds(1.5F);
-        for(int i = 0; i < 15; i++)
+        for(int i = 0; i < 5; i++)
         {
             float rand = Random.Range(-10, 10);
             GameObject f = Instantiate(fallingObject);
@@ -29,7 +29,7 @@ public class AFOobjectspawner : MonoBehaviour
         }
 
         yield return new WaitForSeconds(3F);
-        for (int i = 0; i < 15; i++)
+        for (int i = 0; i < 10; i++)
         {
             float rand = Random.Range(-10, 10);
             GameObject f = Instantiate(fallingObject);
