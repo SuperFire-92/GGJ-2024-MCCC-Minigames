@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using TMPro;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class Timer : MonoBehaviour
     [SerializeField] float timerLength;
     [SerializeField] bool timerKill;
     [SerializeField] bool ignoreMultiplier;
+    [SerializeField] bool waitToStart;
 
     [Header("References")]
     [SerializeField] TextMeshProUGUI timeDisplay;
@@ -25,25 +27,31 @@ public class Timer : MonoBehaviour
 
     private void Update()
     {
-        timerLength -= Time.deltaTime;
-        if (GameManager.gameStatus != 0)
+        if (!waitToStart)
         {
-            timeDisplay.text = (GameManager.gameStatus == 1 ? "WIN" : "LOSE");
-            if (timerLength > 1f)
+            timerLength -= Time.deltaTime;
+            if (GameManager.gameStatus != 0)
             {
-                timerLength = 1f;
+                timeDisplay.text = (GameManager.gameStatus == 1 ? "WIN" : "LOSE");
+                if (timerLength > 1f)
+                {
+                    timerLength = 1f;
+                }
+            }
+            else
+            {
+                timeDisplay.text = Mathf.FloorToInt(timerLength).ToString();
+            }
+        
+            if (timerLength <= 0) 
+            {
+                GameManager.returnToMainGame();
             }
         }
-        else
-        {
-            timeDisplay.text = Mathf.FloorToInt(timerLength).ToString();
-        }
-        
-        if (timerLength <= 0) 
-        {
-            GameManager.returnToMainGame();
-        }
-        
     }
 
+    public void startTimer()
+    {
+        waitToStart = false;
+    }
 }

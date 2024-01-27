@@ -106,11 +106,6 @@ public class Trivia : MonoBehaviour
         GameManager.endMiniGame(false);
     }
 
-    public void testFunction()
-    {
-        Debug.Log("test");
-    }
-
     private void initializeList()
     {
         list.Add(new PromptAndAnswer("What's Obama's last name", "Barack", "No one knows", "Jackson", "Haywood", "B"));
