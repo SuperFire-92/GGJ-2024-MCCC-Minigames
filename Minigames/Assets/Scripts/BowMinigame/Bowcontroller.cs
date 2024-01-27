@@ -27,7 +27,7 @@ public class Bowcontroller : MonoBehaviour
         MoveDown();
         if(speed > 25)
         {
-            speed = 25;
+            speed = 15;
         }
         if (hasfire == false)
         {
