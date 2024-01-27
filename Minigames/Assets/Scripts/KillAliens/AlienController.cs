@@ -39,6 +39,7 @@ public class AlienController : MonoBehaviour
             {
                 Debug.Log("WIN");
                 //WIN CONDITION HERE
+                GameManager.endMiniGame(true);
             }
             Destroy(this.gameObject);
         }
