@@ -23,7 +23,8 @@ public static class LevelList
         {"level12", "WordType" },
         {"level13", "TurtleRacer" },
         {"level14", "GiveASmooch" },
-        {"level15", "Trivia" }
+        {"level15", "Trivia" },
+        {"Level16", "Jackinthebox" }
 
     };
 
