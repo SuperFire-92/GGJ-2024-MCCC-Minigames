@@ -14,6 +14,7 @@ public class ArrowMatchMain : MonoBehaviour
    
     void Start()
     {
+        StopAllCoroutines();
         StartCoroutine(keySpawns());
         successfulkeypresses = 0;
         StartCoroutine(endGame());

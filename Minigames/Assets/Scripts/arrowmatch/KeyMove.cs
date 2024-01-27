@@ -64,4 +64,30 @@ public class KeyMove : MonoBehaviour
         }
         
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("keymain"))
+        {
+            if (key == KeyType.Q)
+            {
+                arrowmatchstatics.qKeyPressable = false;
+            }
+            else if (key == KeyType.W)
+            {
+                arrowmatchstatics.wKeyPressable = false;
+
+            }
+            else if (key == KeyType.E)
+            {
+                arrowmatchstatics.eKeyPressable = false;
+
+            }
+            else if (key == KeyType.R)
+            {
+                arrowmatchstatics.rKeyPressable = false;
+
+            }
+        }
+    }
 }
