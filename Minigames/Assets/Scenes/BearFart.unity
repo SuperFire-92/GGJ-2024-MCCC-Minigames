@@ -251,9 +251,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6056efc225b9f2e41b994c1015f8aa5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bear: {fileID: 0}
-  fart: {fileID: 0}
-  spawnLocation: {fileID: 0}
+  fart: {fileID: 8275047317650188352, guid: 246e69c170aed0749a675266e5840d63, type: 3}
+  asshole: {fileID: 1063400969}
+  hands: {fileID: 4311165867190336871, guid: 4dc8253892c2c904392bbfb302e137cb, type: 3}
+  dhm: {fileID: 6635746604629430206, guid: 4dc8253892c2c904392bbfb302e137cb, type: 3}
   bearFartTimer: 5
 --- !u!1 &740933381
 GameObject:
