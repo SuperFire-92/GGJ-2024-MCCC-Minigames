@@ -23,4 +23,5 @@ public class Punchcontroller : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, speed * (float)1.15);
         }
     }
+
 }
