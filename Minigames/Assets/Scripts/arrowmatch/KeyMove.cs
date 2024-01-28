@@ -24,7 +24,7 @@ public class KeyMove : MonoBehaviour
     void Update()
     {
         //rb.AddRelativeForce(Vector2.up * movementSpeed * Time.deltaTime);
-        rb.velocity = Vector2.up * movementSpeed * Time.deltaTime;
+        rb.velocity = Vector2.up * movementSpeed;
        // playerRigidBody.velocity = new Vector2(movementSpeed * inputHorizontal, playerRigidBody.velocity.y);
 
         //transform.Translate(Vector2.up * movementSpeed * Time.deltaTime);
