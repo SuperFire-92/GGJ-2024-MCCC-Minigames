@@ -593,7 +593,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hand
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6632447768268570089, guid: 95bfac4c37f5b1647928d0b4e4995f11, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5887818678709653942, guid: 95bfac4c37f5b1647928d0b4e4995f11, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

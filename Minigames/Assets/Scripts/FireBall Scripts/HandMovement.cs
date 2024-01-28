@@ -9,6 +9,7 @@ public class HandMovement : MonoBehaviour
     public float rightOffset;
     public float startPositionX;
     private bool moveRight;
+    public AudioSource audioSource;
     private Rigidbody2D handRB;
 
     public GameObject projectile;
@@ -17,7 +18,6 @@ public class HandMovement : MonoBehaviour
     public float firingRate;
     private float shotCooldown;
     private bool canFire = false;
-    private AudioSource audio;
 
 
     // Start is called before the first frame update
@@ -26,7 +26,6 @@ public class HandMovement : MonoBehaviour
         handRB = GetComponent<Rigidbody2D>();
         moveRight = false;
         startPositionX = transform.position.x;
-        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -83,10 +82,10 @@ public class HandMovement : MonoBehaviour
         {
             if (canFire)
             {
-                audio.Play();
                 //After you fire you have to wait a specified amount of time 
                 //to fire again so set the boolean to false.
                 canFire = false;
+                audioSource.Play();
                 shootFireball();
             }
         }
