@@ -8,6 +8,8 @@ public class FollowLineStartGame : MonoBehaviour
     public GameObject timer;
     public GameObject instructionText;
     public GameObject[] fooBar;
+    public GameObject ring;
+    public GameObject arrow;
 
     private bool startGame;
 
@@ -61,10 +63,12 @@ public class FollowLineStartGame : MonoBehaviour
 
                 // get rid of instructions and spawn the bar
                 instructionText.SetActive(false);
-
+                ring.SetActive(true);
+                arrow.SetActive(false);
                 fooBar[Random.Range(0, 1)].SetActive(true);
                 //get rid of the dot
                 gameObject.SetActive(false);
+
             }
 
         }

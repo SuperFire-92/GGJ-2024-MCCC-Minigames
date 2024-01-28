@@ -35,6 +35,7 @@ public class Timer : MonoBehaviour
             if (GameManager.gameStatus != 0)
             {
                 timeDisplay.text = (GameManager.gameStatus == 1 ? "WIN" : "LOSE");
+                timeDisplay.color = (GameManager.gameStatus == 1 ? Color.green : Color.red);
                 if (timerLength > 1f)
                 {
                     timerLength = 1f;
