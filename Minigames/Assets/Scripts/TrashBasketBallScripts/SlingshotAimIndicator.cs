@@ -17,7 +17,6 @@ public class SlingshotAimIndicator : MonoBehaviour
     void Start()
     {
         trashBallControlerScript = trashBall.GetComponent<TrashBallControler>();
-        //spriteControler = gameObject.GetComponent<SpriteRenderer>();
         spriteControlerChild = transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
     }
 
@@ -43,21 +42,6 @@ public class SlingshotAimIndicator : MonoBehaviour
             spriteControlerChild.sprite = postFlick;
         }
        transform.eulerAngles = new Vector3(0, 0, -aimIndicator.x * 4);
-       
-       // if (trashBallControlerScript.getFarShot())
-       //{
-       //     spriteControler.enabled = false;
-       //     spriteControlerChild.enabled = true;
-       // }
-       //else
-       //{
-       //     spriteControler.enabled = true;
-       //     spriteControlerChild.enabled = false;
-            
-            
-       // }
-
-      
 
 
 
