@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
-public class FollowLineGameEnder : MonoBehaviour
+public class FollowLineStartGame : MonoBehaviour
 {
     public GameObject timer;
+    public GameObject instructionText;
+    public GameObject[] fooBar;
 
-    bool startGame;
+    private bool startGame;
 
     private float xMax;
     private float yMax;
@@ -56,6 +58,13 @@ public class FollowLineGameEnder : MonoBehaviour
             {
                 startGame = true;
                 timer.GetComponent<Timer>().startTimer();
+
+                // get rid of instructions and spawn the bar
+                instructionText.SetActive(false);
+
+                fooBar[Random.Range(0, 1)].SetActive(true);
+                //get rid of the dot
+                gameObject.SetActive(true);
             }
 
         }

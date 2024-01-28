@@ -22,7 +22,7 @@ public class FollowMouse : MonoBehaviour
     private void followMouse()
     {
         Vector3 mousePos = Input.mousePosition;
-
+        
         mousePos.x /= xMax;
         mousePos.y /= yMax;
 
