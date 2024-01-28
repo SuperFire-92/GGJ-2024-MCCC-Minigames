@@ -29,6 +29,7 @@ public class Jackcontroller : MonoBehaviour
         {
             audios.Play();
             count++;
+            Debug.Log("count " + count);
             progresscount++;
            progress.transform.localScale = new Vector3 (progresscount * .5f,(float).2,1);
             if(progress.transform.localScale == new Vector3(2.5f,.2f,1))
