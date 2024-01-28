@@ -26,7 +26,7 @@ public class WaldoScript : MonoBehaviour
         //Instantiate(waldoToSpawn);
         //waldoToSpawn.transform.position = new Vector2(spawnLocations[randomIndex].transform.position.x, spawnLocations[randomIndex].transform.position.y);
         waldo = Instantiate(waldoToSpawn);
-        waldo.transform.position = spawnLocations[Random.Range(0, 27)].gameObject.transform.position;
+        waldo.transform.position = spawnLocations[Random.Range(0, spawnLocations.Length)].gameObject.transform.position;
 
     }
 

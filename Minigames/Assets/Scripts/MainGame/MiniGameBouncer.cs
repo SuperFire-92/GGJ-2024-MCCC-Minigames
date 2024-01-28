@@ -22,7 +22,7 @@ public class MiniGameBouncer : MonoBehaviour
         GameManager.instruction = selectedLVL.instruction;
         GameManager.uniqueMenu = selectedLVL.uniqueMenu;
 
-        //set text
+        //Set text
         instructions.text = selectedLVL.instruction;
         score.text = GameManager.getScore().ToString();
     }

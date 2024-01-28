@@ -50,7 +50,8 @@ public class Jackcontroller : MonoBehaviour
             }
 
 
-            if (count == 20)
+            int goal = Random.Range(18, 26);
+            if (count == goal)
             {
                 canJack = false;
                 jack.SetActive(true);
