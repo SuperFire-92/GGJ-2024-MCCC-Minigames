@@ -236,7 +236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6131575968052043683, guid: 89c72e3820150f44b8b5f1d9b77cdc91, type: 3}
       propertyPath: timerLength
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6131575968052043683, guid: 89c72e3820150f44b8b5f1d9b77cdc91, type: 3}
       propertyPath: waitToStart
@@ -1762,7 +1762,7 @@ MonoBehaviour:
   - {fileID: 1406301712}
   - {fileID: 1341612334}
   ring: {fileID: 1302956735}
-  arrow: {fileID: 0}
+  arrow: {fileID: 169603495}
 --- !u!1001 &1757386805
 PrefabInstance:
   m_ObjectHideFlags: 0

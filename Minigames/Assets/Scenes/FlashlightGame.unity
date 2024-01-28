@@ -1083,7 +1083,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   findMe: {fileID: 661505044}
-  timeToPass: 0.5
+  timeToPass: 0.45
 --- !u!1 &1917322945
 GameObject:
   m_ObjectHideFlags: 0
