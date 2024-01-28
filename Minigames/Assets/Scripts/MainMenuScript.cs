@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class MainMenuScript : MonoBehaviour
 {
     [SerializeField] AudioSource gameStartSound;
+    [SerializeField] private GameObject mainmenupanel, creditspanel;
+
     private bool startTimer = false;
     float timer = 0f;
 
@@ -37,5 +39,17 @@ public class MainMenuScript : MonoBehaviour
         gameStartSound.Play();
 
         startTimer = true;
+    }
+
+    public void showmainmenu()
+    {
+        creditspanel.SetActive(false);
+        mainmenupanel.SetActive(true);
+    }
+
+    public void showcredits()
+    {
+        creditspanel.SetActive(true);
+        mainmenupanel.SetActive(false);
     }
 }
