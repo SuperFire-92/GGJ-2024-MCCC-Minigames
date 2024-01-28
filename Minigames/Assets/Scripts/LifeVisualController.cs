@@ -39,6 +39,11 @@ public class LifeVisualController : MonoBehaviour
         curTime = 0f;
         playedSound = false;
 
+        // set prev lives correctly if game restarts
+        if (curLives == 5 && previousLives != 5) {
+            previousLives = 5;
+        }
+
 
         deflatePrev = totalLives - previousLives;
 
