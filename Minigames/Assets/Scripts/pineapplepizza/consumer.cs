@@ -7,7 +7,10 @@ public class consumer : MonoBehaviour
     public Sprite happy;
     public Sprite sad;
 
+    [System.NonSerialized] public bool isHappy;
+
     private SpriteRenderer sr;
+    //[SerializeField]
     private bool likesPineapple;
 
 
@@ -15,17 +18,26 @@ public class consumer : MonoBehaviour
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
-        likesPineapple = Random.Range(0, 2) == 0;
     }
 
-    public bool getHappy(bool givenPineapple)
-    {
-        bool isHappy;
-
-        isHappy = (likesPineapple && givenPineapple) || (!likesPineapple && !givenPineapple);
-
+    public void updatePicture() {
         sr.sprite = isHappy ? happy : sad;
+    }
 
-        return isHappy;
+    public void setLikesPineapple(bool shouldLikePineapple) {
+        likesPineapple = shouldLikePineapple;
+        updatePicture();
+    }
+
+    void OnTriggerEnter2D(Collider2D collision) {
+        //Enter pineapple zone.
+        isHappy = likesPineapple;
+        updatePicture();
+    }
+
+    void OnTriggerExit2D(Collider2D collision) {
+        //Exit pineapple zone.
+        isHappy = !likesPineapple;
+        updatePicture();
     }
 }
