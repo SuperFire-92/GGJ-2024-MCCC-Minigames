@@ -11,14 +11,17 @@ public class TurtleRacerControler : MonoBehaviour
     public Sprite turtleRacerSprite;
     public Sprite turtleRacerSprite2;
     public Sprite turtleRacerStoppedSprite;
-    public bool launch;
-    public float thrust;
+    private AudioSource turtleRacerAudioSource;
+    private bool launch;
+    private float thrust;
 
     
 
     // Start is called before the first frame update
     void Start()
     {
+        turtleRacerAudioSource = GetComponent<AudioSource>();
+        //turtleRacerAudioSource.Play();
         turtleRacerRigidbody2d = GetComponent<Rigidbody2D>();
         turtleRacerSpriteRenderer = GetComponent<SpriteRenderer>();
         turtleRacerSpriteRenderer.sprite = turtleRacerStoppedSprite;
