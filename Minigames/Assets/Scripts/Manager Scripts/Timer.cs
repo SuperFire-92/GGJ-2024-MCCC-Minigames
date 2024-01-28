@@ -55,6 +55,7 @@ public class Timer : MonoBehaviour
         
             if (timerLength <= 0) 
             {
+                GameManager.endMiniGame(!timerKill);
                 GameManager.returnToMainGame();
             }
         }

@@ -28,6 +28,10 @@ public class KeyMove : MonoBehaviour
        // playerRigidBody.velocity = new Vector2(movementSpeed * inputHorizontal, playerRigidBody.velocity.y);
 
         //transform.Translate(Vector2.up * movementSpeed * Time.deltaTime);
+        if (transform.position.y > 4.9f)
+        {
+            GameManager.endMiniGame(false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
