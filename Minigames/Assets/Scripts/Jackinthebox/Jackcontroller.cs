@@ -6,12 +6,13 @@ public class Jackcontroller : MonoBehaviour
 {
     private int count;
     private int progresscount;
-    public GameObject jack1;
-    public GameObject jack2;
-    public GameObject jack3;
-    public GameObject jack4;
     public GameObject progress;
     private AudioSource audios;
+    public GameObject handleUp;
+    public GameObject handleDown;
+    public GameObject jack;
+    private bool canJack = true;
+
     void Start()
     {
         progress.transform.localScale = new Vector3(0, .2f, 1);
@@ -21,14 +22,24 @@ public class Jackcontroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        jack();
+        jackSpace();
     }
-    void jack()
+    void jackSpace()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && canJack)
         {
             audios.Play();
             count++;
+            if (count % 2 == 0)
+            {
+                handleUp.SetActive(false);
+                handleDown.SetActive(true);
+            }
+            else
+            {
+                handleUp.SetActive(true);
+                handleDown.SetActive(false);
+            }
             Debug.Log("count " + count);
             progresscount++;
            progress.transform.localScale = new Vector3 (progresscount * .5f,(float).2,1);
@@ -37,23 +48,14 @@ public class Jackcontroller : MonoBehaviour
                 progress.transform.localScale = new Vector3 (0f,.2f,1);
                 progresscount = 0;
             }
-        }
-        if(count == 5)
-        {
-            jack1.SetActive(true);
-        }
-        else if((count == 10))
-        {
-            jack2.SetActive(true);
-        }
-        else if(count == 15)
-        {
-            jack3.SetActive(true);
-        }
-        else if(count == 20)
-        {
-            jack4.SetActive(true);
-            GameManager.endMiniGame(true);
+
+
+            if (count == 20)
+            {
+                canJack = false;
+                jack.SetActive(true);
+                GameManager.endMiniGame(true);
+            }
         }
     }
 }
