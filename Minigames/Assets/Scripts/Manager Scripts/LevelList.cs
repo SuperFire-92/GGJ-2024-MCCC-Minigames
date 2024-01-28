@@ -29,7 +29,6 @@ public static class LevelList
         {"level18", "FlappyPipe" },
         {"level19", "BearFart" },
         {"level20", "FollowTheLine" }
-
     };
 
     public const string theGame = "TheGame";
