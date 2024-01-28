@@ -8,14 +8,16 @@ public class TrashBallControler : MonoBehaviour
 {
     private Rigidbody2D trashBallRigidbody2D;
     private float inputHorizontal;
-    private float inputVertical;
-    public Vector3 aimVector;
-    //bool farShot;
+    private Vector3 aimVector;
+    private AudioSource trashBallAudioSource;
+    public AudioClip hitAudio;
+    public AudioClip scoreAudio;
     bool canShoot;
 
     // Start is called before the first frame update
     void Start()
     {
+        trashBallAudioSource = GetComponent<AudioSource>();
         trashBallRigidbody2D = GetComponent<Rigidbody2D>();
         aimVector = new Vector3 (0, 12, 0);
         //farShot = true;
@@ -39,6 +41,8 @@ public class TrashBallControler : MonoBehaviour
        
         if (canShoot)
         {
+            trashBallAudioSource.clip = hitAudio;
+            trashBallAudioSource.Play();
             canShoot = false;
             trashBallRigidbody2D.velocity = Vector3.zero;
             trashBallRigidbody2D.velocity = aimVector;
@@ -51,7 +55,7 @@ public class TrashBallControler : MonoBehaviour
     {
 
         inputHorizontal = Input.GetAxisRaw("Horizontal");
-        inputVertical = Input.GetAxisRaw("Vertical");
+       
 
         if (inputHorizontal < 0) 
         {
@@ -71,28 +75,6 @@ public class TrashBallControler : MonoBehaviour
 
         }
 
-        //  remove farshot/lowshot
-        //if (inputVertical < 0)
-        //{
-        //    aimVector.y = 9;
-        //    farShot = false;
-        //    //Debug.Log("aim row = " + aimVector.y);
-        //}
-        //if (inputVertical > 0)
-        //{
-        //    aimVector.y = 12;
-        //    farShot = true;
-        //    //Debug.Log("aim row = " + aimVector.y);
-        //}
-
-
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-
-            SceneManager.LoadScene("TrashBasketBall");
-
-        }
-
 
     }
 
@@ -108,10 +90,6 @@ public class TrashBallControler : MonoBehaviour
         return canShoot;
     }
 
-    //public bool getFarShot()
-    //{
-    //    return farShot;
-    //}
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -123,6 +101,8 @@ public class TrashBallControler : MonoBehaviour
         }
         else
         {
+            trashBallAudioSource.clip = scoreAudio;
+            trashBallAudioSource.Play();
             trashBallRigidbody2D.velocity = Vector3.zero;
             transform.position = collision.transform.position;
             transform.position = new Vector3(transform.position.x, transform.position.y + 0.4f, transform.position.z);
@@ -141,7 +121,7 @@ public class TrashBallControler : MonoBehaviour
         {
 
             trashBallRigidbody2D.velocity = Vector3.zero;
-            aimVector = new Vector3(0, 12, 0);
+            //aimVector = new Vector3(0, 12, 0);
             transform.position = new Vector3(0, -3.5f, 0);
             canShoot = true;
 
@@ -152,7 +132,7 @@ public class TrashBallControler : MonoBehaviour
     {
 
         trashBallRigidbody2D.velocity = Vector3.zero;
-        aimVector = new Vector3(0, 12, 0);
+        //aimVector = new Vector3(0, 12, 0);
         transform.position = new Vector3(0, -3.5f, 0);
         canShoot = true;
 

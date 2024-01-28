@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class TurtleRacerGoal : MonoBehaviour
 {
+    private AudioSource goalAudioSource;
 
+    private void Start()
+    {
+      goalAudioSource = GetComponent<AudioSource>();
+
+    }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -12,8 +18,9 @@ public class TurtleRacerGoal : MonoBehaviour
         
         if (collision.tag.Equals("Player"))
         {
-
+            goalAudioSource.Play();
             GameManager.endMiniGame(true);
+            
         }
         else
         {

@@ -6,37 +6,33 @@ public class FireballMinigameManager : MonoBehaviour
 {
     public GameObject goblin;
     public GameObject[] spawnLocations;
-    static int goblinNum=5;
+    public int goblinNum;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        goblinNum.Equals(spawnLocations.Length);
         spawnGoblin();
     }
 
     // Update is called once per frame
     void Update()
     {
-        checkGameWin();
+
     }
 
     public void subtractGoblinNum()
     {
-        goblinNum--;
-    }
+        goblinNum -=1;
+        Debug.Log(goblinNum);
 
-    private void checkGameWin()
-    {
-        //Debug.Log(goblinNum);
-        if(goblinNum.Equals(0))
+        if (goblinNum.Equals(0))
         {
             Debug.Log("Goblin Game Win");
             goblinNum = 5;
             GameManager.endMiniGame(true);
         }
     }
-
 
     void spawnGoblin()
     {

@@ -17,7 +17,7 @@ public class ArrowMatchMain : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(keySpawns());
         successfulkeypresses = 0;
-        StartCoroutine(endGame());
+        //StartCoroutine(endGame());
     }
 
     // Update is called once per frame
@@ -79,7 +79,7 @@ public class ArrowMatchMain : MonoBehaviour
     {
         while(true)
         {
-            yield return new WaitForSeconds(1F);
+            yield return new WaitForSeconds(0.5F);
             GameObject keytoSpawn;
             int r = Random.Range(0, 4);
             if (r == 0)
@@ -105,16 +105,16 @@ public class ArrowMatchMain : MonoBehaviour
         }
     }    
 
-    IEnumerator endGame()
-    {
-        yield return new WaitForSeconds(11);
-        if(successfulkeypresses >= 6)
-        {
-            GameManager.endMiniGame(true);
-        }
-        else
-        {
-            GameManager.endMiniGame(false);
-        }
-    }
+    //IEnumerator endGame()
+    //{
+    //    yield return new WaitForSeconds(11);
+    //    if(successfulkeypresses >= 6)
+    //    {
+    //        GameManager.endMiniGame(true);
+    //    }
+    //    else
+    //    {
+    //        GameManager.endMiniGame(false);
+    //    }
+    //}
 }

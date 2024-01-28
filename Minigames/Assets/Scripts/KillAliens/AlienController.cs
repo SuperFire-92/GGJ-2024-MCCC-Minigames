@@ -11,16 +11,24 @@ public class AlienController : MonoBehaviour
     public float xScale; //1
     public float yScale; //0.5
 
+    private int numOfAliensInScene;
+    private int currentNum;
+
+    [SerializeField] AudioSource hitSound;
+
     // Start is called before the first frame update
     void Start()
     {
         startPos = transform.position;
+        GameObject[] num = GameObject.FindGameObjectsWithTag("alien");
+        currentNum = num.Length;
     }
 
     // Update is called once per frame
     void Update()
     {
         moveAlien();
+        checkForAliens();
     }
 
     private void moveAlien()
@@ -30,8 +38,11 @@ public class AlienController : MonoBehaviour
 
     private void OnMouseOver()
     {
+        Debug.Log("hovering");
         if (Input.GetKey(KeyCode.Mouse0))
         {
+            Debug.Log("clicked");
+
             //Check if there are aliens left (== 1 and not null because this alien isn't destroyed yet). If not, win
             GameObject[] aliensInScene;
             aliensInScene = GameObject.FindGameObjectsWithTag("alien");
@@ -41,7 +52,20 @@ public class AlienController : MonoBehaviour
                 //WIN CONDITION HERE
                 GameManager.endMiniGame(true);
             }
+
             Destroy(this.gameObject);
+        }
+    }
+
+    private void checkForAliens() //I have to do all this just to make sound effects work but whatever
+    {
+        GameObject[] aliensInScene = GameObject.FindGameObjectsWithTag("alien");
+        numOfAliensInScene = aliensInScene.Length;
+
+        if (numOfAliensInScene != currentNum)
+        {
+            currentNum = numOfAliensInScene;
+            hitSound.Play();
         }
     }
 }

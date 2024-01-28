@@ -6,6 +6,7 @@ public class FireballMovement : MonoBehaviour
 {
     public GameObject gameManager;
     private FireballMinigameManager gm;
+
     public float projectileSpeed;
     public float projectileLife;
 

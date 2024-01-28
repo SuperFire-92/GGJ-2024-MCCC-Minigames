@@ -9,45 +9,78 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 36bb266e7459ebb4a8533d8585e42457
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/arrowmatch.unity
+    guid: cbaca07da169d634e9e5b80080782df8
   - enabled: 1
     path: Assets/Scenes/AvoidFallingObjects.unity
     guid: 895d4b87ce36e164dbfb396df25e798d
   - enabled: 1
-    path: Assets/Scenes/KTB.unity
-    guid: b2e223fd52e1fce449381f4f02364373
-  - enabled: 1
-    path: Assets/Scenes/TheGame.unity
-    guid: dfc267c6e8a433a409834d84e3fe468d
-  - enabled: 1
-    path: Assets/Scenes/WheresWaldo.unity
-    guid: b7bace0f4d4caf44bb85c4172495394a
-  - enabled: 1
-    path: Assets/Scenes/BowMinigame.unity
-    guid: 7fea2b6da3afa3b4cbbafbbed659024c
-  - enabled: 1
-    path: Assets/Scenes/wiibalanceboard.unity
-    guid: 632d030e591bcc54f9ab69c97d6d6c7f
-  - enabled: 1
-    path: Assets/Scenes/TrashBasketBall.unity
-    guid: a0c14a3347ba1e145b121fa735225324
-  - enabled: 1
-    path: Assets/Scenes/WizardFireball.unity
-    guid: a02b7c18914b0434bb45dc17748134ea
-  - enabled: 1
-    path: Assets/Scenes/FlashlightGame.unity
-    guid: 2a95161d1fe16424d8e49fc2fb42f061
-  - enabled: 1
-    path: Assets/Scenes/KillAliens.unity
-    guid: 9edaff0e9521c814d90a3064c9d38f9f
-  - enabled: 1
-    path: Assets/Scenes/arrowmatch.unity
-    guid: cbaca07da169d634e9e5b80080782df8
+    path: Assets/Scenes/BearFart.unity
+    guid: 444ae8e9328400549b180840a10be197
   - enabled: 1
     path: Assets/Scenes/BounceMinigame.unity
     guid: 0f2a90bb06f87634faa24a504e41dc4f
   - enabled: 1
+    path: Assets/Scenes/BowMinigame.unity
+    guid: 7fea2b6da3afa3b4cbbafbbed659024c
+  - enabled: 1
+    path: Assets/Scenes/FlashlightGame.unity
+    guid: 2a95161d1fe16424d8e49fc2fb42f061
+  - enabled: 1
+    path: Assets/Scenes/FollowLine.unity
+    guid: d03f4cdab0d69f649b03a15333a3c899
+  - enabled: 1
+    path: Assets/Scenes/FollowTheLine.unity
+    guid: aea1febe1b5a57643bd9bfcc013576e9
+  - enabled: 1
+    path: Assets/Scenes/GiveASmooch.unity
+    guid: 5313d36bfb5a8c44da373db169ce4bd4
+  - enabled: 1
+    path: Assets/Scenes/Jackinthebox.unity
+    guid: 922624376ec40cf4f88e24ff99e503fb
+  - enabled: 1
+    path: Assets/Scenes/KillAliens.unity
+    guid: 9edaff0e9521c814d90a3064c9d38f9f
+  - enabled: 1
+    path: Assets/Scenes/KTB.unity
+    guid: b2e223fd52e1fce449381f4f02364373
+  - enabled: 1
+    path: Assets/Scenes/New Scene.unity
+    guid: b21e5fd043c925b4abca52b30bdab88e
+  - enabled: 1
+    path: Assets/Scenes/RockPaperScissors.unity
+    guid: 698f15f16cf54d0499c090031771b074
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/TheGame.unity
+    guid: dfc267c6e8a433a409834d84e3fe468d
+  - enabled: 1
+    path: Assets/Scenes/TrashBasketBall.unity
+    guid: a0c14a3347ba1e145b121fa735225324
+  - enabled: 1
+    path: Assets/Scenes/Trivia.unity
+    guid: 7e82f987c220a4a49a15ff1cc09b3154
+  - enabled: 1
+    path: Assets/Scenes/TurtleRacer.unity
+    guid: 0b8fa3652649d8b40bbfea91607c95f8
+  - enabled: 1
+    path: Assets/Scenes/WheresWaldo.unity
+    guid: b7bace0f4d4caf44bb85c4172495394a
+  - enabled: 1
+    path: Assets/Scenes/wiibalanceboard.unity
+    guid: 632d030e591bcc54f9ab69c97d6d6c7f
+  - enabled: 1
+    path: Assets/Scenes/WizardFireball.unity
+    guid: a02b7c18914b0434bb45dc17748134ea
+  - enabled: 1
     path: Assets/Scenes/WordType.unity
     guid: 4c48b7a35ee315c4cb36c6646d1e38c9
+  - enabled: 1
+    path: Assets/Scenes/FlappyPipe.unity
+    guid: e5b8dc981aa71d4458bce942577bb8b6
+  - enabled: 1
+    path: Assets/Scenes/surfer.unity
+    guid: 5da7fc90b94713945b4f1ed903a784ca
   m_configObjects: {}

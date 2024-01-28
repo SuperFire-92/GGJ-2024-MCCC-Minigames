@@ -1,26 +1,34 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Windows;
 
 public class Typing : MonoBehaviour
 {
     public TextMeshProUGUI wordText;
     public TextMeshProUGUI mistakesText;
+    public TextMeshProUGUI wordsLeftText;
     public int numOfWordsToType;
     public int mistakesAllowed;
     private int mistakes = 0;
     private List<string> words = new List<string>();
     private string word;
 
+    [SerializeField] AudioSource correctSound;
+    [SerializeField] AudioSource wrongSound;
+    [SerializeField] AudioSource typeSound;
+
+    private string fileName = Application.dataPath + "/Scripts/WordType/dictionary.txt";
+
     // Start is called before the first frame update
     void Start()
     {
-        initializeWords();
-        int randomIndex = UnityEngine.Random.Range(0, words.Count - 1);
-        wordText.SetText(words[randomIndex]);
-        word = words[randomIndex];
+        pickWord();
+        wordsLeftText.SetText("Words Left: " + numOfWordsToType);
         numOfWordsToType--;
 
         mistakesText.SetText("Mistakes Left: " + (mistakesAllowed - mistakes));
@@ -36,26 +44,30 @@ public class Typing : MonoBehaviour
 
     private void getInput()
     {
-        if (Input.anyKeyDown)
+        if (UnityEngine.Input.anyKeyDown)
         {
             //Debug.Log(Input.inputString);
-            checkIfRight(Input.inputString);
+            checkIfRight(UnityEngine.Input.inputString);
         }
     }
 
     private void checkIfRight(string i)
     {
-        char input = i[0];
+
 
         if (word.Length > 0)
         {
+            char input = i[0];
+
             if (input == word[0])
             {
+                typeSound.Play();
                 word = word.Substring(1);
                 wordText.SetText(word);
             }
             else
             {
+                wrongSound.Play();
                 mistakes++;
                 mistakesText.SetText("Mistakes Left: " + (mistakesAllowed - mistakes));
 
@@ -71,7 +83,6 @@ public class Typing : MonoBehaviour
                 {
                     mistakesText.color = Color.red;
                 }
-
 
                 if (mistakes >= mistakesAllowed)
                 {
@@ -89,99 +100,33 @@ public class Typing : MonoBehaviour
         {
             if (numOfWordsToType == 0)
             {
+                wordsLeftText.SetText("Words Left: 0");
+                correctSound.Play();
                 //WIN CONDITION
                 Debug.Log("WIN");
                 GameManager.endMiniGame(true);
             }
-
-            numOfWordsToType--;
-            //Show another word
-            int randomIndex = UnityEngine.Random.Range(0, words.Count - 1);
-            wordText.SetText(words[randomIndex]);
-            word = words[randomIndex];
+            else
+            {
+                correctSound.Play();
+                wordsLeftText.SetText("Words Left: " + numOfWordsToType);
+                numOfWordsToType--;
+                //Show another word
+                pickWord();
+            }
         }
     }
 
-    private void initializeWords()
+    private void pickWord()
     {
-        //Just a couple words
-        words.Add("absolutely");
-        words.Add("especially");
-        words.Add("incredibly");
-        words.Add("understand");
-        words.Add("appreciate");
-        words.Add("compliment");
-        words.Add("accelerate");
-        words.Add("jaywalking");
-        words.Add("lumberjack");
-        words.Add("maximizing");
-        words.Add("minimizing");
-        words.Add("jackhammer");
-        words.Add("journaling");
-        words.Add("subjective");
-        words.Add("dehumanize");
-        words.Add("strawberry");
-        words.Add("pineapples");
-        words.Add("friendship");
-        words.Add("everything");
-        words.Add("motivation");
-        words.Add("pens");
-        words.Add("brother");
-        words.Add("brain");
-        words.Add("self");
-        words.Add("guitar");
-        words.Add("tolerate");
-        words.Add("resign");
-        words.Add("eject");
-        words.Add("doubt");
-        words.Add("reduce");
-        words.Add("lobby");
-        words.Add("stem");
-        words.Add("global");
-        words.Add("entertain");
-        words.Add("surprise");
-        words.Add("recipe");
-        words.Add("ready");
-        words.Add("shatter");
-        words.Add("ice");
-        words.Add("album");
-        words.Add("mountain");
-        words.Add("queen");
-        words.Add("king");
-        words.Add("prince");
-        words.Add("church");
-        words.Add("well");
-        words.Add("round");
-        words.Add("polite");
-        words.Add("convince");
-        words.Add("host");
-        words.Add("ride");
-        words.Add("relevant");
-        words.Add("side");
-        words.Add("pain");
-        words.Add("sleep");
-        words.Add("tray");
-        words.Add("lunch");
-        words.Add("sense");
-        words.Add("accept");
-        words.Add("temple");
-        words.Add("favor");
-        words.Add("spot");
-        words.Add("contribute");
-        words.Add("sun");
-        words.Add("dog");
-        words.Add("cat");
-        words.Add("cherry");
-        words.Add("grape");
-        words.Add("brown");
-        words.Add("green");
-        words.Add("red");
-        words.Add("blue");
-        words.Add("pluck");
-        words.Add("locate");
-        words.Add("global");
-        words.Add("youg");
-        words.Add("partner");
-        words.Add("debut");
+        int line = UnityEngine.Random.Range(1, 370100);
+        using (var sr = new StreamReader(fileName))
+        {
+            for (int i = 1; i < line; i++)
+            {
+                word = sr.ReadLine();
+            }
+        }
+        wordText.SetText(word);
     }
 }

@@ -8,14 +8,23 @@ public class MiniGameBouncer : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private TextMeshProUGUI score;
+    [SerializeField] private TextMeshProUGUI instructions;
 
     private float timer;
+    private Level selectedLVL;
 
     private void Start()
     {
         //Set the score text to the current score
-        score.text = GameManager.getScore().ToString();
+
         timer = 3f;
+        selectedLVL = LevelList.getRandomLevel();
+        GameManager.instruction = selectedLVL.instruction;
+        GameManager.uniqueMenu = selectedLVL.uniqueMenu;
+
+        //set text
+        instructions.text = selectedLVL.instruction;
+        score.text = GameManager.getScore().ToString();
     }
 
     private void Update()
@@ -23,7 +32,10 @@ public class MiniGameBouncer : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            SceneManager.LoadScene(LevelList.getRandomLevel());
+            SceneManager.LoadScene(selectedLVL.sceneName);
+        }else if (timer <= 1.25f)
+        {
+
         }
     }
 }

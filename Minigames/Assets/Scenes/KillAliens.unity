@@ -631,7 +631,7 @@ MonoBehaviour:
   - {fileID: 296033579}
   - {fileID: 1886861943}
   - {fileID: 1927942969}
-  numOfAliensToSpawn: 3
+  numOfAliensToSpawn: 5
 --- !u!1 &842591864
 GameObject:
   m_ObjectHideFlags: 0
