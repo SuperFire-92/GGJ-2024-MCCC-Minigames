@@ -83,6 +83,7 @@ public class KTB : MonoBehaviour
         else if(power >= 6)
         {
             anim.SetTrigger("KickSuperSuccess");
+            GameManager.addScore(1);
             didPlayerWin = true;
         }
         else if(power >= 3)
