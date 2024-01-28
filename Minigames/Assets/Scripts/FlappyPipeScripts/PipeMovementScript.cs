@@ -9,7 +9,6 @@ public class PipeMovementScript : MonoBehaviour
     public int Score;
     private Rigidbody2D rb;
     public float speed = 10f;
-    private bool outOfBounds = false;
 
     // Start is called before the first frame update
     void Start()
