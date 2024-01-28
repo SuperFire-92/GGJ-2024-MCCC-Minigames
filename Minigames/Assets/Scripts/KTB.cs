@@ -127,7 +127,7 @@ public class KTB : MonoBehaviour
         yield return new WaitForSeconds(1F);
 
         bool didPlayerWin;
-        if(power <= 0)
+        if(power <= 5)
         {
             anim.SetTrigger("KickFail");
             didPlayerWin = false;
@@ -139,6 +139,7 @@ public class KTB : MonoBehaviour
         }
         else
         {
+            anim.SetTrigger("KickFail");
             didPlayerWin = false;
         }
 
