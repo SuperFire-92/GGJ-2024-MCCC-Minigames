@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class WaldoClick : MonoBehaviour
 {
-    private Transform myTransform;
     private SpriteRenderer myRenderer;
     private bool canClick = false;
+
+    [SerializeField] AudioSource clickSound;
 
     // Start is called before the first frame update
     void Start()
     {
-        myTransform = GetComponent<Transform>();
         myRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -20,6 +20,7 @@ public class WaldoClick : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0) && canClick)
         {
+            clickSound.Play();
             GameManager.endMiniGame(true);
             //NEXT LEVEL or something idk
         }

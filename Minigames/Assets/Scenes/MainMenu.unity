@@ -682,6 +682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df2f684deb85b594ab8f3fc168427054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameStartSound: {fileID: 980826152}
 --- !u!4 &980826151
 Transform:
   m_ObjectHideFlags: 0
