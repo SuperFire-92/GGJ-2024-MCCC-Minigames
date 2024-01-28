@@ -12,6 +12,9 @@ public static class GameManager
     //0 - Still playing, 1 - Win, 2 - Loss
     public static int gameStatus = 0;
 
+    public static string instruction;
+    public static bool uniqueMenu;
+
     public static void resetGame()
     {
         score = 0;
@@ -54,6 +57,11 @@ public static class GameManager
                 //SceneManager.LoadScene("MainMenu");
             }
         }
+
+        // Resets important crap that gets set during
+        // minigamebouncer
+        uniqueMenu = false;
+        instruction = null;
     }
 
     public static void returnToMainGame()

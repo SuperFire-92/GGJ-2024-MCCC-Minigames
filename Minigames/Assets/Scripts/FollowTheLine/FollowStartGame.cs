@@ -56,7 +56,7 @@ public class FollowLineStartGame : MonoBehaviour
             }
 
             timeHovering += Time.deltaTime;
-            if (timeHovering > 1.5f)
+            if (timeHovering > 0.67f)
             {
                 startGame = true;
                 timer.GetComponent<Timer>().startTimer();
