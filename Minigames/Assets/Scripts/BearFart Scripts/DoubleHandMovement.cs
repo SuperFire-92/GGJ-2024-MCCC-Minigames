@@ -6,12 +6,12 @@ public class DoubleHandMovement : MonoBehaviour
 {
     public float movementSpeed;
     public float endPosY;
-    private bool noseCovered;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        noseCovered = false;
+
     }
 
     // Update is called once per frame
@@ -37,11 +37,7 @@ public class DoubleHandMovement : MonoBehaviour
             transform.Translate(Vector2.up * movementSpeed * Time.deltaTime);
 
         }
-        noseCovered = true;
+
     }
 
-    public bool getNoseCovered()
-    {
-        return noseCovered;
-    }
 }
