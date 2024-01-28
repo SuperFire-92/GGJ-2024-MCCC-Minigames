@@ -97,15 +97,7 @@ public static class LevelList
         } while (rand == prevLevelIndex);
         //Store the index of the coming level
         prevLevelIndex = rand;
-        int i = 0;
-        foreach(Level s in levels)
-        {
-            if (rand == i)
-            {
-                return s;
-            }
-            i++;
-        }
-        return null;
+        
+        return levels[rand];
     }
 }
