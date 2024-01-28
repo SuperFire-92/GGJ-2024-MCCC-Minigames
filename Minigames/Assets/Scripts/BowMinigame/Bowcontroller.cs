@@ -11,11 +11,13 @@ public class Bowcontroller : MonoBehaviour
     public float speed;
     private bool hasfire;
     private bool goingup;
+    private AudioSource audios;
     void Start()
     {
 
         yStartPos = transform.position.y;
         goingup = true;
+        audios = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -53,6 +55,7 @@ public class Bowcontroller : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            audios.Play();
             Instantiate(Arrow, Shootpoint.transform.position, Shootpoint.transform.rotation);
             hasfire = true;
         }
