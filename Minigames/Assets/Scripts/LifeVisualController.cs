@@ -15,6 +15,8 @@ public class LifeVisualController : MonoBehaviour
 
     public AudioClip[] passFailSounds;
 
+    public GameObject junkMessage;
+
     private AudioSource cushionAudioSource;
     private int curLives;
     private static int previousLives = 5;
@@ -61,6 +63,9 @@ public class LifeVisualController : MonoBehaviour
 
             // put fail sound in
             cushionAudioSource.clip = passFailSounds[1];
+
+            //display popup message
+            junkMessage.SetActive(true);
         } else {
             // put the pass sound in
             cushionAudioSource.clip = passFailSounds[0];
