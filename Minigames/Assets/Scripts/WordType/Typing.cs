@@ -1,8 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Windows;
 
 public class Typing : MonoBehaviour
 {
@@ -18,13 +21,16 @@ public class Typing : MonoBehaviour
     [SerializeField] AudioSource wrongSound;
     [SerializeField] AudioSource typeSound;
 
+    private string fileName = "C:\\GGJ2024\\GGJ-2024-MCCC-Minigames\\Minigames\\Assets\\Scripts\\WordType\\dictionary.txt";
+
     // Start is called before the first frame update
     void Start()
     {
-        initializeWords();
-        int randomIndex = UnityEngine.Random.Range(0, words.Count - 1);
-        wordText.SetText(words[randomIndex]);
-        word = words[randomIndex];
+        //initializeWords();
+        //int randomIndex = UnityEngine.Random.Range(0, words.Count - 1);
+        //wordText.SetText(words[randomIndex]);
+        //word = words[randomIndex];
+        pickWord();
         numOfWordsToType--;
 
         mistakesText.SetText("Mistakes Left: " + (mistakesAllowed - mistakes));
@@ -40,10 +46,10 @@ public class Typing : MonoBehaviour
 
     private void getInput()
     {
-        if (Input.anyKeyDown)
+        if (UnityEngine.Input.anyKeyDown)
         {
             //Debug.Log(Input.inputString);
-            checkIfRight(Input.inputString);
+            checkIfRight(UnityEngine.Input.inputString);
         }
     }
 
@@ -106,9 +112,31 @@ public class Typing : MonoBehaviour
                 correctSound.Play();
                 numOfWordsToType--;
                 //Show another word
-                int randomIndex = UnityEngine.Random.Range(0, words.Count - 1);
-                wordText.SetText(words[randomIndex]);
-                word = words[randomIndex];
+                pickWord();
+                //int randomIndex = UnityEngine.Random.Range(0, words.Count - 1);
+                //wordText.SetText(words[randomIndex]);
+                //word = words[randomIndex];
+            }
+        }
+    }
+
+    private void pickWord()
+    {
+        int line = UnityEngine.Random.Range(1, 370100);
+
+        //var lines = System.IO.File.ReadLines("dictionary.txt");
+        //var line = System.IO.File.Read
+        //foreach (var line in lines)
+        //{
+
+        //}
+
+        using (var sr = new StreamReader(fileName))
+        {
+            for (int i = 1; i < line; i++)
+            {
+                word = sr.ReadLine();
+                wordText.SetText(word);
             }
         }
     }
@@ -204,5 +232,28 @@ public class Typing : MonoBehaviour
         words.Add("minecraft");
         words.Add("minecraft");
         words.Add("minecraft");
+        words.Add("minecraft");
+        words.Add("minecraft");
+        words.Add("minecraft");
+        words.Add("minecraft");
+        words.Add("minecraft");
+        words.Add("bomboclat");
+        words.Add("potato");
+        words.Add("boob");
+        words.Add("bootay");
+        words.Add("asdfasdf");
+        words.Add("jviusrj");
+        words.Add("bumfuzzled");
+        words.Add("whippersnapper");
+        words.Add("bamboozle");
+        words.Add("flabbergast");
+        words.Add("blubber");
+        words.Add("dingus");
+        words.Add("wart");
+        words.Add("yap");
+        words.Add("yapper");
+        words.Add("yapping");
+        words.Add("doohickey");
+        words.Add("thing");
     }
 }
