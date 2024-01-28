@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SpawnAliens : MonoBehaviour
 {
-    public GameObject alienToSpawn;
+    public GameObject[] aliensToSpawn;
+    private GameObject alien;
     public List<GameObject> spawnLocations;
     private List<int> spawnedIndexes;
     public int numOfAliensToSpawn;
@@ -13,6 +14,7 @@ public class SpawnAliens : MonoBehaviour
     void Start()
     {
         spawnedIndexes = new List<int>();
+
         spawnAliensLoop();
     }
 
@@ -33,9 +35,10 @@ public class SpawnAliens : MonoBehaviour
                 randomIndex = Random.Range(0, spawnLocations.Count);
             }
             spawnedIndexes.Add(randomIndex);
-            Instantiate(alienToSpawn);
+            int whichAlien = Random.Range(0, aliensToSpawn.Length);
+            alien = Instantiate(aliensToSpawn[whichAlien]);
             //Debug.Log("Num: " +  randomIndex);
-            alienToSpawn.transform.position = new Vector2(spawnLocations[randomIndex].transform.position.x, spawnLocations[randomIndex].transform.position.y);
+            alien.transform.position = new Vector2(spawnLocations[randomIndex].transform.position.x, spawnLocations[randomIndex].transform.position.y);
         }
     }
 
