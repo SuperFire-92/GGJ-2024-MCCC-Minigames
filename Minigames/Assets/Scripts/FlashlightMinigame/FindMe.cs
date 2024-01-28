@@ -16,15 +16,12 @@ public class FindMe : MonoBehaviour
         float x;
         float y;
 
-        do
-        {
-            x = UnityEngine.Random.Range(xMin, xMax);
-        } while (x > -2 && x < 2);
 
-        do
-        {
-            y = UnityEngine.Random.Range(yMin, yMax);
-        } while (y > -1.5 && y < 1.5);
+        x = UnityEngine.Random.Range(xMin, xMax);
+
+
+        y = UnityEngine.Random.Range(yMin, yMax);
+
 
 
 
