@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Trivia : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class Trivia : MonoBehaviour
     public TextMeshProUGUI ansCText;
     public TextMeshProUGUI ansDText;
     public TextMeshProUGUI promptText;
+
+    public GameObject buttonA;
+    public GameObject buttonB;
+    public GameObject buttonC;
+    public GameObject buttonD;
 
     private List<PromptAndAnswer> list = new List<PromptAndAnswer>();
     private PromptAndAnswer current;
@@ -46,12 +52,19 @@ public class Trivia : MonoBehaviour
     public void btnA()
     {
         Debug.Log("Button A Clicked");
+
+        buttonB.SetActive(false);
+        buttonC.SetActive(false);
+        buttonD.SetActive(false);
+
         if (correctAnswer == "A")
         {
+            buttonA.GetComponentInChildren<Image>().tintColor = Color.green;
             winGame();
         }
         else
         {
+            buttonA.GetComponentInChildren<Image>().tintColor = Color.red;
             loseGame();
         }
     }
@@ -59,6 +72,11 @@ public class Trivia : MonoBehaviour
     public void btnB()
     {
         Debug.Log("Button B Clicked");
+
+        buttonA.SetActive(false);
+        buttonC.SetActive(false);
+        buttonD.SetActive(false);
+
         if (correctAnswer == "B")
         {
             winGame();
@@ -72,6 +90,11 @@ public class Trivia : MonoBehaviour
     public void btnC()
     {
         Debug.Log("Button C Clicked");
+
+        buttonA.SetActive(false);
+        buttonB.SetActive(false);
+        buttonD.SetActive(false);
+
         if (correctAnswer == "C")
         {
             winGame();
@@ -85,6 +108,11 @@ public class Trivia : MonoBehaviour
     public void btnD()
     {
         Debug.Log("Button D Clicked");
+
+        buttonA.SetActive(false);
+        buttonB.SetActive(false);
+        buttonC.SetActive(false);
+
         if (correctAnswer == "D")
         {
             winGame();
@@ -124,17 +152,17 @@ public class Trivia : MonoBehaviour
         list.Add(new PromptAndAnswer("What is this game based off of?", "It's a totally original idea", "WarioWare", "Minecraft", "Fortnite", "B"));
 
         //Finds 3 random numbers (that aren't the user's current score). Once answer (C) will be the correct answer, displaying the user's current score
-        int a = 0;
+        int a = Random.Range(0, 36); ;
         while (a == GameManager.getScore())
         {
             a = Random.Range(0, 36);
         }
-        int b = 0;
+        int b = Random.Range(0, 36); ;
         while (b == GameManager.getScore())
         {
             b = Random.Range(0, 36);
         }
-        int d = 0;
+        int d = Random.Range(0, 36); ;
         while (d == GameManager.getScore())
         {
             d = Random.Range(0, 36);

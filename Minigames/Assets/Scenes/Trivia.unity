@@ -475,6 +475,10 @@ MonoBehaviour:
   ansCText: {fileID: 750888731}
   ansDText: {fileID: 1036924774}
   promptText: {fileID: 1830316674}
+  buttonA: {fileID: 1846432371}
+  buttonB: {fileID: 1259299700}
+  buttonC: {fileID: 1655492148}
+  buttonD: {fileID: 1542967565}
   correctNoise: {fileID: 777785329}
   wrongNoise: {fileID: 777785328}
 --- !u!82 &777785328
