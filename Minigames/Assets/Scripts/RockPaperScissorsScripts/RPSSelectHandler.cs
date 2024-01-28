@@ -25,15 +25,7 @@ public class RPSSelectHandler : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0) && canClick)
         {
-            //GameManager.endMiniGame(true);
-
-            //if (whoAmI == RPSControlerScript.getCorrectMove())
-            //{
-
-            //    GameManager.endMiniGame(true);
-
-            //}
-            //else if (whoAmI == RPSControlerScript.getCorrectMove())
+           
             RPSControlerScript.evaluateGame(whoAmI);
 
             

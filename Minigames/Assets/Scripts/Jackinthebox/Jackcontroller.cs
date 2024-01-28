@@ -11,9 +11,11 @@ public class Jackcontroller : MonoBehaviour
     public GameObject jack3;
     public GameObject jack4;
     public GameObject progress;
+    private AudioSource audios;
     void Start()
     {
         progress.transform.localScale = new Vector3(0, .2f, 1);
+        audios = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,6 +27,7 @@ public class Jackcontroller : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
+            audios.Play();
             count++;
             progresscount++;
            progress.transform.localScale = new Vector3 (progresscount * .5f,(float).2,1);
