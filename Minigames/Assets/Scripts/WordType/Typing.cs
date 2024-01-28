@@ -14,6 +14,10 @@ public class Typing : MonoBehaviour
     private List<string> words = new List<string>();
     private string word;
 
+    [SerializeField] AudioSource correctSound;
+    [SerializeField] AudioSource wrongSound;
+    [SerializeField] AudioSource typeSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,17 +49,21 @@ public class Typing : MonoBehaviour
 
     private void checkIfRight(string i)
     {
-        char input = i[0];
+
 
         if (word.Length > 0)
         {
+            char input = i[0];
+
             if (input == word[0])
             {
+                typeSound.Play();
                 word = word.Substring(1);
                 wordText.SetText(word);
             }
             else
             {
+                wrongSound.Play();
                 mistakes++;
                 mistakesText.SetText("Mistakes Left: " + (mistakesAllowed - mistakes));
 
@@ -93,12 +101,15 @@ public class Typing : MonoBehaviour
                 Debug.Log("WIN");
                 GameManager.endMiniGame(true);
             }
-
-            numOfWordsToType--;
-            //Show another word
-            int randomIndex = UnityEngine.Random.Range(0, words.Count - 1);
-            wordText.SetText(words[randomIndex]);
-            word = words[randomIndex];
+            else
+            {
+                correctSound.Play();
+                numOfWordsToType--;
+                //Show another word
+                int randomIndex = UnityEngine.Random.Range(0, words.Count - 1);
+                wordText.SetText(words[randomIndex]);
+                word = words[randomIndex];
+            }
         }
     }
 
