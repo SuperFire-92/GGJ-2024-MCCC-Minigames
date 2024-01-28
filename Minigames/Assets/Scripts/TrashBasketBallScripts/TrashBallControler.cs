@@ -61,7 +61,7 @@ public class TrashBallControler : MonoBehaviour
         {
             if (aimVector.x > -18)
             {
-                aimVector.x -= 0.02f;
+                aimVector.x -= 10f * Time.deltaTime;
             }
             
 
@@ -70,7 +70,7 @@ public class TrashBallControler : MonoBehaviour
         {
             if (aimVector.x < 18)
             {
-                aimVector.x += 0.02f;
+                aimVector.x += 10f * Time.deltaTime;
             }
 
         }
