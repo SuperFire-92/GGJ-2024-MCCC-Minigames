@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bowcontroller : MonoBehaviour
 {
-    private float startpos;
+    private float yStartPos;
     private Rigidbody2D rb;
     public GameObject Arrow;
     public Transform Shootpoint;
@@ -14,55 +14,40 @@ public class Bowcontroller : MonoBehaviour
     void Start()
     {
 
-        startpos = transform.position.y;
-        rb = GetComponent<Rigidbody2D>();
+        yStartPos = transform.position.y;
         goingup = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        Moveup();
-        MoveDown();
-        if(speed > 25)
-        {
-            speed = 15;
-        }
+        moveBow();
         if (hasfire == false)
         {
             shoot();
         }
     }
-    void Moveup()
+
+    private void moveBow()
     {
-        if (transform.position.y <= startpos + 4 && goingup)
+        if (goingup == true)
         {
-            rb.velocity = new Vector2(rb.velocity.x, speed * (float)1.5);
-
+            transform.Translate(Vector2.up * speed * Time.deltaTime);
+            if (transform.position.y > yStartPos + 4)
+            {
+                goingup = false;
+            }
         }
-        if (transform.position.y >= startpos + 4)
+        else
         {
-            goingup = false;
-            speed = speed + (float).1;
-            //Debug.Log("Switch down");
-        }
-
-    }
-    void MoveDown()
-    {
-        if (transform.position.y >= startpos - 4 && goingup == false)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, speed * -(float)1.5);
-
-        }
-        if (transform.position.y <= startpos - 4)
-        {
-            goingup = true;
-            speed = speed + (float).1;
-            //Debug.Log("Switch up");
+            transform.Translate(Vector2.down * speed * Time.deltaTime);
+            if (transform.position.y < yStartPos - 4)
+            {
+                goingup = true;
+            }
         }
     }
+
 
     void shoot()
     {
