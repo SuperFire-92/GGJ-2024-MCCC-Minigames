@@ -9,6 +9,8 @@ public class PipeMovementScript : MonoBehaviour
     public int Score;
     private Rigidbody2D rb;
     public float speed = 10f;
+    private bool outOfBounds = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +29,6 @@ public class PipeMovementScript : MonoBehaviour
         input = Input.GetAxisRaw("Vertical");
 
         rb.velocity = new Vector3(0, input * speed, 0);
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
