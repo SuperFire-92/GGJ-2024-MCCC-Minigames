@@ -8,6 +8,9 @@ public class KTB : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private GameObject keyboard_e;
     [SerializeField] private GameObject keyboard_c;
+    [SerializeField] private GameObject keyboard_g;
+    [SerializeField] private GameObject keyboard_f;
+
     [SerializeField] private TMP_Text powerTMP;
     [SerializeField] private GameObject instructionstxt;
     [SerializeField] private GameObject foot;
@@ -15,8 +18,12 @@ public class KTB : MonoBehaviour
     [SerializeField] private GameObject goal;
     [SerializeField] private Animator anim;
     [SerializeField] private GameObject ballgoalthing;
+    private bool keyCanBePressed;
     private bool ekeyActive;
     private bool cKeyActive;
+    private bool gKeyActive;
+    private bool fKeyActive;
+
 
     private bool successfulKeyPress;
 
@@ -27,7 +34,10 @@ public class KTB : MonoBehaviour
         power = 0;
         ekeyActive = false;
         cKeyActive = false;
+        gKeyActive = false;
+        fKeyActive = false;
         successfulKeyPress = false;
+        keyCanBePressed = false;
         StartCoroutine(minigame());
     }
 
@@ -42,28 +52,72 @@ public class KTB : MonoBehaviour
         {
             successfulKeyPress = true;
         }
+        if(Input.GetKeyDown(KeyCode.G) && gKeyActive)
+        {
+            successfulKeyPress = true;
+        }
+        if (Input.GetKeyDown(KeyCode.F) && fKeyActive)
+        {
+            successfulKeyPress = true;
+        }
+    }
+
+    public void setKeyActive()
+    {
+        int rand = Random.Range(0, 4);
+        if(rand == 0)
+        {
+            ekeyActive = true;
+            keyboard_e.SetActive(true);
+        }
+        else if(rand == 1)
+        {
+            cKeyActive = true;
+            keyboard_c.SetActive(true);
+        }
+        else if (rand == 2)
+        {
+            gKeyActive = true;
+            keyboard_g.SetActive(true);
+        }
+        else if (rand == 3)
+        {
+            fKeyActive = true;
+            keyboard_f.SetActive(true);
+        }
+
+    }
+
+    public void disableKeys()
+    {
+        keyboard_e.SetActive(false);
+        keyboard_c.SetActive(false);
+        keyboard_g.SetActive(false);
+        keyboard_f.SetActive(false);
+
+        ekeyActive = false;
+        gKeyActive = false;
+        cKeyActive = false;
+        fKeyActive = false;
+
     }
 
     IEnumerator minigame()
     {
         yield return new WaitForSeconds(1F);
-        keyboard_c.SetActive(true);
-        cKeyActive = true;
+        setKeyActive();
         yield return new WaitForSeconds(1F);
-        cKeyActive = false;
+        disableKeys();
         if(successfulKeyPress)
         {
             power += 3;
             powerTMP.SetText("POWER: " + power);
         }
         successfulKeyPress = false;
-        keyboard_c.SetActive(false);
         yield return new WaitForSeconds(1F);
-        keyboard_e.SetActive(true);
-        ekeyActive = true;
+        setKeyActive();
         yield return new WaitForSeconds(1F);
-        keyboard_e.SetActive(false);
-        ekeyActive = false;
+        disableKeys();
         if (successfulKeyPress)
         {
             power += 3;
