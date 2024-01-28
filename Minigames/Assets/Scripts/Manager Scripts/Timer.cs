@@ -21,7 +21,9 @@ public class Timer : MonoBehaviour
         {
             timerLength = timerLength * GameManager.getSpeed();
         }
-        
+
+        timeDisplay.text = Mathf.FloorToInt(timerLength).ToString();
+
         GameManager.gameStatus = 0;
     }
 

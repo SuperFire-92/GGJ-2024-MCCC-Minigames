@@ -11,27 +11,55 @@ public class Move : MonoBehaviour
         Left,
         Right
     }
-
+    
     [SerializeField] private Orientation orientation;
     [SerializeField] private float speed;
 
+    [Header("References")]
+    [SerializeField] private GameObject startButton;
+
     private void Update()
     {
-        if (orientation == Orientation.Left)
+        if (startButton != null)
         {
-            transform.position = transform.position + Vector3.left * speed * Time.deltaTime;
+            if (startButton.GetComponent<HoverButton>().gameStarted == true)
+            {
+                if (orientation == Orientation.Left)
+                {
+                    transform.position = transform.position + Vector3.left * speed * Time.deltaTime;
+                }
+                if (orientation == Orientation.Right)
+                {
+                    transform.position = transform.position + Vector3.right * speed * Time.deltaTime;
+                }
+                if (orientation == Orientation.Up)
+                {
+                    transform.position = transform.position + Vector3.up * speed * Time.deltaTime;
+                }
+                if (orientation == Orientation.Down)
+                {
+                    transform.position = transform.position + Vector3.down * speed * Time.deltaTime;
+                }
+            }
         }
-        if (orientation == Orientation.Right)
+        else
         {
-            transform.position = transform.position + Vector3.right * speed * Time.deltaTime;
-        }
-        if (orientation == Orientation.Up)
-        {
-            transform.position = transform.position + Vector3.up * speed * Time.deltaTime;
-        }
-        if (orientation == Orientation.Down)
-        {
-            transform.position = transform.position + Vector3.down * speed * Time.deltaTime;
+            if (orientation == Orientation.Left)
+            {
+                transform.position = transform.position + Vector3.left * speed * Time.deltaTime;
+            }
+            if (orientation == Orientation.Right)
+            {
+                transform.position = transform.position + Vector3.right * speed * Time.deltaTime;
+            }
+            if (orientation == Orientation.Up)
+            {
+                transform.position = transform.position + Vector3.up * speed * Time.deltaTime;
+            }
+            if (orientation == Orientation.Down)
+            {
+                transform.position = transform.position + Vector3.down * speed * Time.deltaTime;
+            }
         }
     }
 }

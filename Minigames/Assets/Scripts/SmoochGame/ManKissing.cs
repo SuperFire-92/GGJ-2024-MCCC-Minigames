@@ -8,6 +8,7 @@ public class ManKissing : MonoBehaviour
     [SerializeField] private AudioSource scream;
     [SerializeField] private GameObject kissCollider;
     [SerializeField] private GameObject killCollider;
+    [SerializeField] private GameObject startButton;
 
     private int xMax;
     private int yMax;
@@ -23,10 +24,34 @@ public class ManKissing : MonoBehaviour
 
     void Update()
     {
-        if (kissCollider.GetComponent<ColliderWin>().hasCollided == true || killCollider.GetComponent<ColliderKill>().hasCollided == true)
+        if (startButton.GetComponent<HoverButton>().gameStarted == true)
         {
-            followMouse();
+            bool kiss = kissCollider.GetComponent<ColliderWin>().hasCollided, kill = killCollider.GetComponent<ColliderKill>().hasCollided;
+            if (!(kiss == true || kill == true))
+            {
+                followMouse();
+            }
+            else
+            {
+                if (kiss)
+                {
+                    if (smooch.isPlaying == false)
+                    {
+                        smooch.Play();
+                    }
+                
+                }
+                else if (kill)
+                {
+                    if (scream.isPlaying == false)
+                    {
+                        scream.Play();
+                    }
+                
+                }
+            }
         }
+
         
     }
     private void followMouse()

@@ -21,7 +21,7 @@ public class Typing : MonoBehaviour
     [SerializeField] AudioSource wrongSound;
     [SerializeField] AudioSource typeSound;
 
-    private string fileName = "C:\\GGJ2024\\GGJ-2024-MCCC-Minigames\\Minigames\\Assets\\Scripts\\WordType\\dictionary.txt";
+    private string fileName = Application.dataPath + "/Scripts/WordType/dictionary.txt";
 
     // Start is called before the first frame update
     void Start()
