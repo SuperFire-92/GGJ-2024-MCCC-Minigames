@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class Points : MonoBehaviour
 {
-    private int points;
-    void Start()
-    {
-        
-    }
+    private static int points;
 
     // Update is called once per frame
     void Update()
@@ -22,21 +18,11 @@ public class Points : MonoBehaviour
     {
         GameManager.endMiniGame(true);
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+     public static int addpoint()
     {
-        if(collision.gameObject.CompareTag("Wall"))
-        {
-            GameManager.endMiniGame(false);
-            Debug.Log("the wall");
-        }
+        points++;
+        return points;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.CompareTag("Endpoint"))
-        {
-            points++;
-            Destroy(collision.gameObject);
-        }
-    }
+  
 
 }
