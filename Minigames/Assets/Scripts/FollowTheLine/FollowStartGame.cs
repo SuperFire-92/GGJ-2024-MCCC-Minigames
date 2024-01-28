@@ -64,7 +64,7 @@ public class FollowLineStartGame : MonoBehaviour
 
                 fooBar[Random.Range(0, 1)].SetActive(true);
                 //get rid of the dot
-                gameObject.SetActive(true);
+                gameObject.SetActive(false);
             }
 
         }
