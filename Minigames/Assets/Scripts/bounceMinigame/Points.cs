@@ -12,6 +12,8 @@ public class Points : MonoBehaviour
         if(points >= 2)
         {
             point();
+            removepoint();
+
         }
     }
     void point()
@@ -22,6 +24,10 @@ public class Points : MonoBehaviour
     {
         points++;
         return points;
+    }
+    void removepoint()
+    {
+        points = 0;
     }
   
 

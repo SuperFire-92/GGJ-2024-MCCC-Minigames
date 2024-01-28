@@ -32,6 +32,7 @@ public class MiniGameBouncer : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
+
             SceneManager.LoadScene(selectedLVL.sceneName);
         }else if (timer <= 1.25f)
         {
