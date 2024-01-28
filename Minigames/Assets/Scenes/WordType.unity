@@ -1040,8 +1040,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Type The Word On Screen
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 14333d4c6da5d5d459c76e0d8e26dd05, type: 2}
-  m_sharedMaterial: {fileID: 1066768601598383026, guid: 14333d4c6da5d5d459c76e0d8e26dd05, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 85a1005ea7d9a1343b9da2e26fafd4a8, type: 2}
+  m_sharedMaterial: {fileID: 5762366624479194948, guid: 85a1005ea7d9a1343b9da2e26fafd4a8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1174,8 +1174,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 14333d4c6da5d5d459c76e0d8e26dd05, type: 2}
-  m_sharedMaterial: {fileID: 1066768601598383026, guid: 14333d4c6da5d5d459c76e0d8e26dd05, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 85a1005ea7d9a1343b9da2e26fafd4a8, type: 2}
+  m_sharedMaterial: {fileID: 5762366624479194948, guid: 85a1005ea7d9a1343b9da2e26fafd4a8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
