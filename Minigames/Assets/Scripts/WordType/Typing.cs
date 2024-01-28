@@ -11,6 +11,7 @@ public class Typing : MonoBehaviour
 {
     public TextMeshProUGUI wordText;
     public TextMeshProUGUI mistakesText;
+    public TextMeshProUGUI wordsLeftText;
     public int numOfWordsToType;
     public int mistakesAllowed;
     private int mistakes = 0;
@@ -27,6 +28,7 @@ public class Typing : MonoBehaviour
     void Start()
     {
         pickWord();
+        wordsLeftText.SetText("Words Left: " + numOfWordsToType);
         numOfWordsToType--;
 
         mistakesText.SetText("Mistakes Left: " + (mistakesAllowed - mistakes));
@@ -82,7 +84,6 @@ public class Typing : MonoBehaviour
                     mistakesText.color = Color.red;
                 }
 
-
                 if (mistakes >= mistakesAllowed)
                 {
                     //LOSE CONDITION
@@ -99,6 +100,8 @@ public class Typing : MonoBehaviour
         {
             if (numOfWordsToType == 0)
             {
+                wordsLeftText.SetText("Words Left: 0");
+                correctSound.Play();
                 //WIN CONDITION
                 Debug.Log("WIN");
                 GameManager.endMiniGame(true);
@@ -106,6 +109,7 @@ public class Typing : MonoBehaviour
             else
             {
                 correctSound.Play();
+                wordsLeftText.SetText("Words Left: " + numOfWordsToType);
                 numOfWordsToType--;
                 //Show another word
                 pickWord();
