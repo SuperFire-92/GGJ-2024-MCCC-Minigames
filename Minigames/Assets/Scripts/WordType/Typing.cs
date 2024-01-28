@@ -26,10 +26,6 @@ public class Typing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //initializeWords();
-        //int randomIndex = UnityEngine.Random.Range(0, words.Count - 1);
-        //wordText.SetText(words[randomIndex]);
-        //word = words[randomIndex];
         pickWord();
         numOfWordsToType--;
 
@@ -113,9 +109,6 @@ public class Typing : MonoBehaviour
                 numOfWordsToType--;
                 //Show another word
                 pickWord();
-                //int randomIndex = UnityEngine.Random.Range(0, words.Count - 1);
-                //wordText.SetText(words[randomIndex]);
-                //word = words[randomIndex];
             }
         }
     }
@@ -123,137 +116,13 @@ public class Typing : MonoBehaviour
     private void pickWord()
     {
         int line = UnityEngine.Random.Range(1, 370100);
-
-        //var lines = System.IO.File.ReadLines("dictionary.txt");
-        //var line = System.IO.File.Read
-        //foreach (var line in lines)
-        //{
-
-        //}
-
         using (var sr = new StreamReader(fileName))
         {
             for (int i = 1; i < line; i++)
             {
                 word = sr.ReadLine();
-                wordText.SetText(word);
             }
         }
-    }
-
-    private void initializeWords()
-    {
-        //Just a couple words
-        words.Add("absolutely");
-        words.Add("especially");
-        words.Add("incredibly");
-        words.Add("understand");
-        words.Add("appreciate");
-        words.Add("compliment");
-        words.Add("accelerate");
-        words.Add("jaywalking");
-        words.Add("lumberjack");
-        words.Add("maximizing");
-        words.Add("minimizing");
-        words.Add("jackhammer");
-        words.Add("journaling");
-        words.Add("subjective");
-        words.Add("dehumanize");
-        words.Add("strawberry");
-        words.Add("pineapples");
-        words.Add("friendship");
-        words.Add("everything");
-        words.Add("motivation");
-        words.Add("pens");
-        words.Add("brother");
-        words.Add("brain");
-        words.Add("self");
-        words.Add("guitar");
-        words.Add("tolerate");
-        words.Add("resign");
-        words.Add("eject");
-        words.Add("doubt");
-        words.Add("reduce");
-        words.Add("lobby");
-        words.Add("stem");
-        words.Add("global");
-        words.Add("entertain");
-        words.Add("surprise");
-        words.Add("recipe");
-        words.Add("ready");
-        words.Add("shatter");
-        words.Add("ice");
-        words.Add("album");
-        words.Add("mountain");
-        words.Add("queen");
-        words.Add("king");
-        words.Add("prince");
-        words.Add("church");
-        words.Add("well");
-        words.Add("round");
-        words.Add("polite");
-        words.Add("convince");
-        words.Add("host");
-        words.Add("ride");
-        words.Add("relevant");
-        words.Add("side");
-        words.Add("pain");
-        words.Add("sleep");
-        words.Add("tray");
-        words.Add("lunch");
-        words.Add("sense");
-        words.Add("accept");
-        words.Add("temple");
-        words.Add("favor");
-        words.Add("spot");
-        words.Add("contribute");
-        words.Add("sun");
-        words.Add("dog");
-        words.Add("cat");
-        words.Add("cherry");
-        words.Add("grape");
-        words.Add("brown");
-        words.Add("green");
-        words.Add("red");
-        words.Add("blue");
-        words.Add("pluck");
-        words.Add("locate");
-        words.Add("global");
-        words.Add("youg");
-        words.Add("partner");
-        words.Add("debut");
-        words.Add("minecraft");
-        words.Add("creeper");
-        words.Add("zombie");
-        words.Add("steve");
-        words.Add("enderman");
-        words.Add("mother");
-        words.Add("minecraft");
-        words.Add("minecraft");
-        words.Add("minecraft");
-        words.Add("minecraft");
-        words.Add("minecraft");
-        words.Add("minecraft");
-        words.Add("minecraft");
-        words.Add("minecraft");
-        words.Add("minecraft");
-        words.Add("bomboclat");
-        words.Add("potato");
-        words.Add("boob");
-        words.Add("bootay");
-        words.Add("asdfasdf");
-        words.Add("jviusrj");
-        words.Add("bumfuzzled");
-        words.Add("whippersnapper");
-        words.Add("bamboozle");
-        words.Add("flabbergast");
-        words.Add("blubber");
-        words.Add("dingus");
-        words.Add("wart");
-        words.Add("yap");
-        words.Add("yapper");
-        words.Add("yapping");
-        words.Add("doohickey");
-        words.Add("thing");
+        wordText.SetText(word);
     }
 }
