@@ -15,7 +15,6 @@ public class Typing : MonoBehaviour
     public int numOfWordsToType;
     public int mistakesAllowed;
     private int mistakes = 0;
-    private List<string> words = new List<string>();
     private string word;
 
     [SerializeField] AudioSource correctSound;

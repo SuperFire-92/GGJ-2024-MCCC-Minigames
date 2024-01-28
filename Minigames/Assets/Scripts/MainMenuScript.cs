@@ -23,7 +23,7 @@ public class MainMenuScript : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
-        if (timer >= 1)
+        if (timer >= 1.5f)
         {
             SceneManager.LoadScene("TheGame");
         }
