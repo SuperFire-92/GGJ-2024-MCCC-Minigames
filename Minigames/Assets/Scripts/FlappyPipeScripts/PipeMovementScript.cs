@@ -10,7 +10,6 @@ public class PipeMovementScript : MonoBehaviour
     public int Score;
     private Rigidbody2D rb;
     public float speed = 10f;
-    private bool outOfBounds = false;
     [SerializeField] private TMP_Text score;
 
     // Start is called before the first frame update
