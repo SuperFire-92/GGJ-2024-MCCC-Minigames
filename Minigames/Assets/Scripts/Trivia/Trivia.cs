@@ -59,12 +59,12 @@ public class Trivia : MonoBehaviour
 
         if (correctAnswer == "A")
         {
-            buttonA.GetComponentInChildren<Image>().tintColor = Color.green;
+            //buttonA.GetComponentInChildren<Image>().tintColor = Color.green;
             winGame();
         }
         else
         {
-            buttonA.GetComponentInChildren<Image>().tintColor = Color.red;
+            //buttonA.GetComponentInChildren<Image>().tintColor = Color.red;
             loseGame();
         }
     }
