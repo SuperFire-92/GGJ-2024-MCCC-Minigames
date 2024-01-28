@@ -18,7 +18,6 @@ public class KTB : MonoBehaviour
     [SerializeField] private GameObject goal;
     [SerializeField] private Animator anim;
     [SerializeField] private GameObject ballgoalthing;
-    private bool keyCanBePressed;
     private bool ekeyActive;
     private bool cKeyActive;
     private bool gKeyActive;
@@ -37,7 +36,6 @@ public class KTB : MonoBehaviour
         gKeyActive = false;
         fKeyActive = false;
         successfulKeyPress = false;
-        keyCanBePressed = false;
         StartCoroutine(minigame());
     }
 
@@ -106,7 +104,7 @@ public class KTB : MonoBehaviour
     {
         yield return new WaitForSeconds(1F);
         setKeyActive();
-        yield return new WaitForSeconds(1F);
+        yield return new WaitForSeconds(0.5F);
         disableKeys();
         if(successfulKeyPress)
         {
@@ -116,7 +114,7 @@ public class KTB : MonoBehaviour
         successfulKeyPress = false;
         yield return new WaitForSeconds(1F);
         setKeyActive();
-        yield return new WaitForSeconds(1F);
+        yield return new WaitForSeconds(0.5F);
         disableKeys();
         if (successfulKeyPress)
         {
@@ -135,12 +133,6 @@ public class KTB : MonoBehaviour
             didPlayerWin = false;
         }
         else if(power >= 6)
-        {
-            anim.SetTrigger("KickSuperSuccess");
-            GameManager.addScore(1);
-            didPlayerWin = true;
-        }
-        else if(power >= 3)
         {
             anim.SetTrigger("KickSuccess");
             didPlayerWin = true;
