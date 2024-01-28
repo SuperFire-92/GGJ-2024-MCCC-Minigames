@@ -12,6 +12,8 @@ public class BearFartMinigameManager : MonoBehaviour
     public float bearFartTimer=5;
     private float bearFartSpeed;
 
+
+    static private bool noseCovered=false;
     static private bool farted=false;
 
 
@@ -20,6 +22,7 @@ public class BearFartMinigameManager : MonoBehaviour
     void Start()
     {
         bearFartTimer=5;
+        noseCovered = false;
         farted = false;
 
 
@@ -34,7 +37,18 @@ public class BearFartMinigameManager : MonoBehaviour
         {
             bearFart();
         }
+
+        buttonChecker();
         checkGameWin();
+    }
+
+    private void buttonChecker()
+    {
+        //If space is clicked
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            noseCovered=true;
+        }
     }
 
     private void setBearFartSpeed()
@@ -51,8 +65,11 @@ public class BearFartMinigameManager : MonoBehaviour
 
     private void checkGameWin()
     {
-        Debug.Log(dhm.getNoseCovered());
-        if (farted.Equals(true) && bearFartSpeed > -0.5 && dhm.getNoseCovered().Equals(true))
+        if(farted.Equals(false) && noseCovered.Equals(true))
+        {
+            GameManager.endMiniGame(false);
+        }
+        if (farted.Equals(true) && bearFartSpeed > -0.5 && noseCovered.Equals(true))
         {
             GameManager.endMiniGame(true);
         }
