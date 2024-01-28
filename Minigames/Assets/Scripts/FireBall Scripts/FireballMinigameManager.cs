@@ -12,19 +12,17 @@ public class FireballMinigameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       // goblinNum;
         spawnGoblin();
     }
 
     // Update is called once per frame
     void Update()
     {
-        checkGameWin();
+
     }
 
     public void subtractGoblinNum()
     {
-        Debug.Log(goblinNum);
         goblinNum -=1;
         Debug.Log(goblinNum);
 
@@ -35,12 +33,6 @@ public class FireballMinigameManager : MonoBehaviour
             GameManager.endMiniGame(true);
         }
     }
-
-    public void checkGameWin()
-    {
-
-    }
-
 
     void spawnGoblin()
     {
