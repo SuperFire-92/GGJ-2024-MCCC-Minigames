@@ -12,6 +12,7 @@ public class Jackcontroller : MonoBehaviour
     public GameObject handleDown;
     public GameObject jack;
     private bool canJack = true;
+    [SerializeField] AudioSource jackNoise;
 
     void Start()
     {
@@ -53,6 +54,7 @@ public class Jackcontroller : MonoBehaviour
             int goal = Random.Range(18, 26);
             if (count == goal)
             {
+                jackNoise.Play();
                 canJack = false;
                 jack.SetActive(true);
                 GameManager.endMiniGame(true);

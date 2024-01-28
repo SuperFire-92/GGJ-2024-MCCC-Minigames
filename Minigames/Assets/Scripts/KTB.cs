@@ -104,7 +104,7 @@ public class KTB : MonoBehaviour
     {
         yield return new WaitForSeconds(1F);
         setKeyActive();
-        yield return new WaitForSeconds(0.5F);
+        yield return new WaitForSeconds(0.75F);
         disableKeys();
         if(successfulKeyPress)
         {
@@ -114,7 +114,7 @@ public class KTB : MonoBehaviour
         successfulKeyPress = false;
         yield return new WaitForSeconds(1F);
         setKeyActive();
-        yield return new WaitForSeconds(0.5F);
+        yield return new WaitForSeconds(0.75F);
         disableKeys();
         if (successfulKeyPress)
         {
