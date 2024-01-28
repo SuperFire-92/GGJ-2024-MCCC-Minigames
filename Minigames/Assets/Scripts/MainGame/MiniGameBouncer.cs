@@ -24,7 +24,7 @@ public class MiniGameBouncer : MonoBehaviour
 
         //Set text
         instructions.text = selectedLVL.instruction;
-        score.text = GameManager.getScore().ToString();
+        score.text = "Score: " + GameManager.getScore().ToString();
     }
 
     private void Update()
