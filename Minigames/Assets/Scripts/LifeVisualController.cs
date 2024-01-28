@@ -77,6 +77,7 @@ public class LifeVisualController : MonoBehaviour
                 curTime = -999f;
 
                 if (curLives == 0) {
+                    GameManager.resetGame();
                     SceneManager.LoadScene("MainMenu");
                 }
 
