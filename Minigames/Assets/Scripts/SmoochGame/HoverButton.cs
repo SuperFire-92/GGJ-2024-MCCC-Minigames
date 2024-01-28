@@ -13,10 +13,17 @@ public class HoverButton : MonoBehaviour
         gameStarted = false;
     }
 
-    private void OnMouseEnter()
+    //private void OnMouseEnter()
+    //{
+    //    gameStarted = true;
+    //    timer.GetComponent<Timer>().startTimer();
+    //    GetComponent<Renderer>().material.color = new Color(1f,0f,0f,0f);
+    //}
+
+    public void buttonClick()
     {
         gameStarted = true;
         timer.GetComponent<Timer>().startTimer();
-        GetComponent<Renderer>().material.color = new Color(1f,0f,0f,0f);
+        this.gameObject.SetActive(false);
     }
 }
