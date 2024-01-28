@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,9 @@ public class PipeMovementScript : MonoBehaviour
     public int Score;
     private Rigidbody2D rb;
     public float speed = 10f;
+    private bool outOfBounds = false;
+    [SerializeField] private TMP_Text score;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +31,6 @@ public class PipeMovementScript : MonoBehaviour
         input = Input.GetAxisRaw("Vertical");
 
         rb.velocity = new Vector3(0, input * speed, 0);
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -35,6 +38,7 @@ public class PipeMovementScript : MonoBehaviour
         
         Destroy(collision.gameObject);
         Score++;
+        score.SetText(Score + "/3");
         if (Score > 2) 
         {
             GameManager.endMiniGame(true);
