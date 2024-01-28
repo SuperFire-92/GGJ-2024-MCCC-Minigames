@@ -10,12 +10,14 @@ public class MiniGameBouncer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI score;
 
     private float timer;
+    private string gameName;
 
     private void Start()
     {
         //Set the score text to the current score
         score.text = GameManager.getScore().ToString();
         timer = 3f;
+        gameName = LevelList.getRandomLevel();
     }
 
     private void Update()
@@ -23,7 +25,7 @@ public class MiniGameBouncer : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            SceneManager.LoadScene(LevelList.getRandomLevel());
+            SceneManager.LoadScene(gameName);
         }
     }
 }
