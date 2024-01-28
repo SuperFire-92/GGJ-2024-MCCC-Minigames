@@ -26,7 +26,8 @@ public static class LevelList
         {"level15", "Trivia" },
         {"level16", "Jackinthebox" },
         {"level17", "RockPaperScissors" },
-        {"level18", "FlappyPipe" }
+        {"level18", "FlappyPipe" },
+        {"level19", "BearFart" }
 
     };
 
